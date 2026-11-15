@@ -4,281 +4,323 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The Garden Venue | New Cairo</title>
-
+<meta name="description" content="The Garden Venue, New Cairo. Luxury outdoor weddings and events. Fully customizable setups, designed to match your vision.">
+<meta name="theme-color" content="#17402F">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Instrument+Sans:wght@400;500;600&family=Marcellus&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/motion@11.11.13/dist/motion.js"></script>
+<script>
+  // Motion is progressive: without it (or with reduced motion) the page renders in its final state.
+  if (window.Motion && !matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('mo');
+</script>
 <style>
-html{scroll-behavior:smooth}body{margin:0}
-.gd{--iv:#FAF8F5;--ink:#13241C;--forest:#173328;--gold:#B89758;--goldd:#7E6226;--goldl:#D9BC82;--olive:#6B7048;--sand:#EDE6D8;--hair:rgba(28,25,23,.16);--ease:cubic-bezier(.22,1,.36,1);background:var(--iv);color:var(--ink);font-size:16px;line-height:1.6;overflow-x:clip;position:relative;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:#fff}
+.gd{
+  --palm:#17402F;--palm-d:#0F2C20;--velvet:#9B1C24;--velvet-d:#7A141B;--lantern:#E8A33D;
+  --plaster:#E7ECE3;--ink:#12291F;--mute:#4E6358;--line:#C8D3C6;--line-d:rgba(255,255,255,.18);
+  --ease:cubic-bezier(.22,1,.36,1);--snap:cubic-bezier(.34,1.25,.64,1);
+  --t-xs:13px;--t-s:15px;--t-m:17px;--t-l:22px;--t-xl:clamp(26px,2.6vw,32px);
+  --t-2xl:clamp(36px,4.4vw,56px);--t-3xl:clamp(44px,5.6vw,82px);
+  background:#fff;color:var(--ink);font-size:var(--t-m);line-height:1.6;overflow-x:clip;-webkit-font-smoothing:antialiased
+}
 .gd *{box-sizing:border-box}
-.gd.en{font-family:'Plus Jakarta Sans',system-ui,sans-serif}
-.gd.ar{font-family:'Cairo',system-ui,sans-serif}
-.gd.en .serif{font-family:'Cormorant Garamond',Georgia,serif}
-.gd.ar .serif{font-family:'Cairo',system-ui,sans-serif;font-weight:300}
-.gd.ar .track{letter-spacing:0!important;text-transform:none!important}
+.gd.en{font-family:'Instrument Sans',system-ui,sans-serif}
+.gd.ar{font-family:'IBM Plex Sans Arabic',system-ui,sans-serif;line-height:1.75}
+.gd.en .disp,.gd.en .h1,.gd.en .h2,.gd.en .h3{font-family:'Marcellus',Georgia,serif;font-weight:400}
+.gd.ar .disp,.gd.ar .h1,.gd.ar .h2,.gd.ar .h3{font-family:'Aref Ruqaa',serif;font-weight:700}
 .gd button,.gd input,.gd select{font:inherit;color:inherit}
 .gd button{cursor:pointer}
-.gd a{color:inherit;text-decoration:none}
-.gd :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-.wrap{max-width:1240px;margin:0 auto;padding-inline:28px}
-.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:var(--goldd)}
-.dk .eyebrow,.sp.night .eyebrow{color:var(--goldl)}
-.h2{font-size:clamp(38px,5vw,64px);line-height:1.04;font-weight:300;margin:14px 0 0;letter-spacing:-.01em}
-.gd.ar .h2{line-height:1.3;font-size:clamp(34px,4.4vw,54px)}
-.lead{font-size:17px;max-width:560px;opacity:.78;margin:18px 0 0}
-.hair{border:1px solid var(--hair)}
-.btn{position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 26px;border-radius:999px;border:1px solid transparent;font-weight:500;font-size:14px;letter-spacing:.02em;transition:color .5s var(--ease),border-color .5s var(--ease),transform .4s var(--ease);white-space:nowrap}
-.btn::before{content:'';position:absolute;inset:0;z-index:-1;transform:translateY(102%);transition:transform .55s var(--ease)}
-.btn:hover::before{transform:none}
-.btn:active{transform:scale(.98)}
-.btn-g{background:var(--gold);color:var(--ink)}
-.btn-g::before{background:var(--ink)}
-.btn-g:hover{color:var(--goldl)}
-.btn-d{background:var(--ink);color:var(--iv)}
-.btn-d::before{background:var(--gold)}
-.btn-d:hover{color:var(--ink)}
-.btn-o{border-color:currentColor;color:inherit;background:transparent}
-.btn-o::before{background:var(--gold)}
-.btn-o:hover{color:var(--ink);border-color:var(--gold)}
-.btn-wa{background:#1f7a4d;color:#fff}
-.btn-wa::before{background:var(--ink)}
-.navw{position:sticky;top:0;z-index:60;height:0}
-.nav{margin:14px auto 0;width:min(1240px,calc(100% - 24px));display:flex;align-items:center;gap:16px;justify-content:space-between;padding:8px 10px 8px 22px;border-radius:999px;background:rgba(18,38,29,.62);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);border:1px solid rgba(255,255,255,.2);color:#fff}
-.nav-links{display:flex;gap:26px;font-size:13px;letter-spacing:.04em}
-.nav-links a{opacity:.82;padding:10px 0;transition:opacity .3s}
-.nav-links a:hover{opacity:1;color:var(--goldl)}
-.lang{display:inline-flex;border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:3px;position:relative}
-.lang button{position:relative;z-index:1;border:0;background:transparent;color:#fff;min-width:44px;min-height:36px;padding:0 12px;border-radius:999px;font-size:13px;font-weight:500;transition:color .4s}
-.lang button.on{color:var(--ink)}
-.lang i{position:absolute;top:3px;bottom:3px;width:calc(50% - 3px);border-radius:999px;background:var(--goldl);transition:inset-inline-start .5s var(--ease)}
-.short{display:none}
-.hero{position:relative;min-height:900px;background:#2a2420;color:#fff;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
-.kb{position:absolute;inset:0;animation:kb 3.2s var(--ease) both}
-.kb svg{width:100%;height:100%;display:block}
-@keyframes kb{from{transform:scale(1.08)}to{transform:scale(1)}}
-.hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,15,12,.55) 0%,rgba(20,15,12,.05) 38%,rgba(20,15,12,.7) 100%)}
-.hero-in{position:relative;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.85fr);gap:48px;align-items:end;padding-top:170px;padding-bottom:44px}
-.h1{font-size:clamp(52px,8vw,118px);line-height:.96;font-weight:300;margin:22px 0 0;letter-spacing:-.02em}
-.gd.ar .h1{line-height:1.25;font-size:clamp(46px,6.6vw,92px)}
-.ml{display:block;overflow:hidden;padding-bottom:.1em;margin-bottom:-.1em}
-.ml>span{display:block;transform:translateY(108%);animation:up 1.2s var(--ease) forwards}
-.ml:nth-child(1)>span{animation-delay:.45s}
-.ml:nth-child(2)>span{animation-delay:.6s}
-.ml:nth-child(3)>span{animation-delay:.75s}
-.fade-in{opacity:0;animation:fi 1.2s var(--ease) forwards}
-@keyframes up{to{transform:none}}
-@keyframes fi{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-.glass{background:rgba(250,248,245,.13);backdrop-filter:blur(22px) saturate(1.35);-webkit-backdrop-filter:blur(22px) saturate(1.35);border:1px solid rgba(255,255,255,.3);border-radius:28px;color:#fff}
-.field{display:flex;flex-direction:column;gap:6px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:1}
-.field>span{opacity:.82}
-.inp{width:100%;min-height:48px;border-radius:14px;border:1px solid rgba(255,255,255,.35);background:rgba(20,15,12,.35);padding:0 14px;font-size:15px;color:#fff;color-scheme:dark}
-.inp-l{border:1px solid var(--hair);background:#fff;color:var(--ink);color-scheme:light;letter-spacing:0;text-transform:none}
-.step{display:flex;align-items:center;justify-content:space-between;min-height:48px;border-radius:14px;border:1px solid rgba(255,255,255,.35);background:rgba(20,15,12,.35);padding:0 6px}
-.step button{width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.14);color:#fff;font-size:20px;line-height:1}
-.step button:hover{background:var(--goldl);color:var(--ink)}
-.result{border-radius:16px;padding:14px 16px;font-size:14px;background:rgba(20,15,12,.5);border:1px solid rgba(255,255,255,.22)}
-.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-inline-end:8px}
-.facts{position:relative;border-top:1px solid rgba(255,255,255,.28);background:rgba(20,15,12,.35);backdrop-filter:blur(12px)}
-.facts-in{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
-.fact{padding:22px 24px;border-inline-start:1px solid rgba(255,255,255,.2)}
-.fact:first-child{border-inline-start:0;padding-inline-start:0}
-.fact small{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:.75}
-.fact b{display:block;font-weight:400;font-size:20px;margin-top:4px}
-.scroll-i{position:absolute;inset-inline-end:28px;top:50%;display:flex;flex-direction:column;align-items:center;gap:10px;font-size:10px;letter-spacing:.3em;text-transform:uppercase;opacity:.8}
-.scroll-i i{width:1px;height:64px;background:rgba(255,255,255,.35);position:relative;overflow:hidden}
-.scroll-i i::after{content:'';position:absolute;left:0;top:-40%;width:1px;height:40%;background:#fff;animation:sc 2.2s var(--ease) infinite}
-@keyframes sc{to{top:110%}}
-.tw{animation:tw 3s ease-in-out infinite}
-.tw:nth-child(2n){animation-delay:.8s}
-.tw:nth-child(3n){animation-delay:1.7s}
-@keyframes tw{0%,100%{opacity:.55}50%{opacity:1}}
-.sec{padding:120px 0}
-.sp{background:var(--iv);color:var(--ink);transition:background-color 1.4s var(--ease),color 1.4s var(--ease)}
-.sp.night{background:#0f1d16;color:#f4ede1}
-.sp-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:56px;margin-top:56px;align-items:start}
-.scene{position:relative;aspect-ratio:8/5.6;border-radius:28px;overflow:hidden;isolation:isolate;background:#222}
-.scene>.lay{position:absolute;inset:0;transition:opacity 1.2s var(--ease)}
-.scene svg{width:100%;height:100%;display:block}
-.nightov{position:absolute;inset:0;background:#171c3d;mix-blend-mode:multiply;transition:opacity 1.6s var(--ease);pointer-events:none}
-.tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid color-mix(in srgb,currentColor 22%,transparent);border-radius:999px;padding:0;position:relative;width:min(100%,620px)}
-.tabs button{position:relative;z-index:1;border:0;background:transparent;min-height:52px;padding:0 12px;line-height:1.2;border-radius:999px;font-size:14px;font-weight:500;color:inherit;transition:color .4s}
-.tabs i{position:absolute;top:4px;bottom:4px;margin-inline-start:4px;border-radius:999px;background:var(--ink);transition:inset-inline-start .6s var(--ease)}
-.sp.night .tabs i{background:var(--goldl)}
-.tabs button.on{color:var(--iv)}
-.sp.night .tabs button.on{color:#0f1d16}
-.toggle{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.sw{position:relative;width:132px;height:56px;border-radius:999px;border:1px solid color-mix(in srgb,currentColor 28%,transparent);background:linear-gradient(90deg,#f4d9a3,#f0b57a);padding:0;transition:background .8s var(--ease)}
-.sp.night .sw{background:linear-gradient(90deg,#2a3260,#171c3d)}
-.sw i{position:absolute;top:4px;inset-inline-start:4px;width:46px;height:46px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;transition:inset-inline-start .7s var(--ease),background .6s;color:#8a5a1f}
-.sp.night .sw i{inset-inline-start:78px;background:#ece6ff;color:#2a3260}
-.sw span{position:absolute;top:50%;transform:translateY(-50%);font-size:11px;font-weight:600;letter-spacing:.06em;color:#3a2a10}
-.sp.night .sw span{color:#d8d2f5}
-.moment{font-size:13px;opacity:.8}
-.specs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid color-mix(in srgb,currentColor 20%,transparent);border-bottom:1px solid color-mix(in srgb,currentColor 20%,transparent);margin-top:28px}
-.specs div{padding:20px 0;border-inline-start:1px solid color-mix(in srgb,currentColor 20%,transparent);padding-inline-start:20px}
-.specs div:first-child{border-inline-start:0;padding-inline-start:0}
-.specs small{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.7}
-.specs b{display:block;font-weight:300;font-size:40px;line-height:1.1;margin-top:4px;transition:opacity .4s}
-.amen{display:flex;flex-direction:column;gap:12px;margin:18px 0 0;padding:0;list-style:none}
-.amen li{display:flex;gap:12px;align-items:center;font-size:15px}
-.amen svg{flex:none;color:var(--goldd)}
-.sp.night .amen svg{color:var(--goldl)}
-.tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:56px}
-.tier{position:relative;border:1px solid var(--hair);border-radius:28px;padding:34px 30px;background:#fff;display:flex;flex-direction:column;transition:transform .6s var(--ease),border-color .4s,box-shadow .6s var(--ease)}
-.tier.on{border-color:var(--gold);box-shadow:0 30px 60px -30px rgba(126,98,38,.45);transform:translateY(-8px)}
-.tier.dkt{background:var(--ink);color:#f4ede1;border-color:var(--ink)}
-.price{font-size:54px;line-height:1;font-weight:300}
-.tlist{list-style:none;padding:0;margin:24px 0 28px;display:flex;flex-direction:column;gap:12px;font-size:14.5px;flex:1}
-.tlist li{display:flex;gap:10px;align-items:flex-start}
-.tlist svg{flex:none;margin-top:4px;color:var(--goldd)}
-.dkt .tlist svg{color:var(--goldl)}
-.badge{position:absolute;top:-13px;inset-inline-start:30px;background:var(--gold);color:var(--ink);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;padding:5px 12px;border-radius:999px}
-.sim{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.9fr);gap:28px;margin-top:96px;align-items:start}
-.panel{border:1px solid var(--hair);border-radius:28px;padding:36px;background:#fff}
-.ctl{margin-top:30px}
-.ctl:first-child{margin-top:0}
-.ctl>label,.ctl>.lbl{display:flex;justify-content:space-between;align-items:baseline;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;color:#5a524a}
-.bignum{font-size:48px;line-height:1;font-weight:300;letter-spacing:0;text-transform:none;color:var(--ink)}
-.range{-webkit-appearance:none;appearance:none;width:100%;height:2px;background:linear-gradient(90deg,var(--gold) var(--p,40%),var(--hair) var(--p,40%));margin:22px 0 6px;outline-offset:8px;border-radius:2px}
-.gd.ar .range{background:linear-gradient(270deg,var(--gold) var(--p,40%),var(--hair) var(--p,40%))}
-.range::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:var(--ink);border:4px solid var(--iv);box-shadow:0 0 0 1px var(--ink);cursor:grab}
-.range::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--ink);border:4px solid var(--iv);cursor:grab}
-.seg{display:flex;border:1px solid var(--hair);border-radius:999px;padding:0;position:relative;margin-top:14px;background:var(--iv)}
-.seg button{position:relative;z-index:1;flex:1;border:0;background:transparent;min-height:52px;font-size:14px;font-weight:500;border-radius:999px;padding:0 10px;line-height:1.2;transition:color .4s}
-.seg i{position:absolute;top:4px;bottom:4px;margin-inline-start:4px;border-radius:999px;background:var(--ink);transition:inset-inline-start .6s var(--ease)}
-.seg button.on{color:var(--iv)}
-.adds{display:grid;gap:10px;margin-top:14px}
-.add{display:flex;align-items:center;gap:14px;text-align:start;border:1px solid var(--hair);border-radius:18px;background:var(--iv);padding:14px 16px;width:100%;min-height:64px;transition:border-color .4s,background .4s}
-.add.on{border-color:var(--gold);background:#fbf3e2}
-.add .ck{flex:none;width:26px;height:26px;border-radius:50%;border:1px solid var(--hair);display:flex;align-items:center;justify-content:center;color:transparent;background:#fff;transition:all .4s var(--ease)}
-.add.on .ck{background:var(--ink);color:var(--goldl);border-color:var(--ink)}
-.add b{display:block;font-weight:500;font-size:15px}
-.add small{display:block;font-size:12.5px;opacity:.7;line-height:1.4}
-.add em{font-style:normal;font-size:13px;font-weight:600;color:var(--goldd);margin-inline-start:auto;white-space:nowrap}
-.rcpt{position:sticky;top:96px;background:var(--ink);color:#f4ede1;border-radius:28px;padding:36px;overflow:hidden}
-.rcpt hr{border:0;border-top:1px solid rgba(255,255,255,.16);margin:18px 0}
-.line{display:flex;justify-content:space-between;gap:16px;font-size:14px;padding:5px 0;opacity:.88}
-.total{font-size:clamp(44px,5vw,64px);font-weight:300;line-height:1.05;letter-spacing:-.01em;color:var(--goldl)}
-.menu-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:56px;margin-top:48px;align-items:center}
-.mlist{list-style:none;padding:0;margin:26px 0 30px;display:flex;flex-direction:column}
-.mlist li{display:flex;gap:16px;align-items:baseline;padding:15px 0;border-top:1px solid rgba(255,255,255,.16);font-size:17px}
-.mlist li span{font-size:12px;color:var(--goldl);letter-spacing:.1em;min-width:26px}
-.dk{background:var(--forest);color:#f4ede1}
-.menu-vis{position:relative;aspect-ratio:1/1.04;border-radius:200px 200px 28px 28px;overflow:hidden;background:#10251b}
-.look{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:150px;gap:16px;margin-top:40px}
-.tile{position:relative;border-radius:22px;overflow:hidden;animation:pop .9s var(--ease) both;color:#fff;display:flex;align-items:flex-end}
-.tile svg{position:absolute;inset:0;width:100%;height:100%}
-.tile p{position:relative;margin:0;padding:18px 20px;width:100%;font-size:21px;line-height:1.15;background:linear-gradient(0deg,rgba(20,15,12,.7),transparent)}
-.tile small{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;opacity:.85;margin-bottom:6px}
-.gd.ar .tile small{font-family:'Cairo',sans-serif;letter-spacing:0}
-@keyframes pop{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{border:1px solid var(--hair);background:transparent;min-height:44px;padding:0 20px;border-radius:999px;font-size:14px;transition:all .4s var(--ease)}
-.chip.on{background:var(--ink);color:var(--iv);border-color:var(--ink)}
-.quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:64px}
-.quote{border-top:1px solid var(--ink);padding-top:22px}
-.quote q{display:block;quotes:none;font-size:25px;line-height:1.3;font-weight:400}
-.gd.ar .quote q{font-size:20px;line-height:1.7}
-.tour{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start}
-.slots{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.slot{border:1px solid var(--hair);background:#fff;min-height:44px;padding:0 18px;border-radius:12px;font-size:14px;transition:all .3s}
-.slot.on{background:var(--ink);color:var(--iv);border-color:var(--ink)}
-.toast{display:flex;gap:14px;align-items:flex-start;background:#eef3e6;border:1px solid #b9c79b;border-radius:18px;padding:18px}
-.foot{background:#0f2219;color:#cfc6b8;padding:64px 0 120px;font-size:14px}
-.wa{position:fixed;inset-inline-end:20px;bottom:20px;z-index:80;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
-.wa-pill{display:inline-flex;align-items:center;gap:10px;min-height:56px;padding:0 22px 0 16px;border-radius:999px;border:0;background:#1f7a4d;color:#fff;font-weight:500;font-size:14px;box-shadow:0 14px 34px -10px rgba(20,60,40,.7);animation:float 3.6s ease-in-out infinite}
-.wa-pill:hover{background:#176240}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-.wa-card{width:min(340px,calc(100vw - 40px));background:#fff;color:var(--ink);border-radius:22px;overflow:hidden;box-shadow:0 30px 70px -20px rgba(0,0,0,.45);border:1px solid var(--hair);animation:fi .5s var(--ease) both}
-.wa-card header{background:#1f7a4d;color:#fff;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;font-size:14px}
-.wa-msg{margin:16px;padding:14px;border-radius:4px 16px 16px 16px;background:#e7f3d9;font-size:13.5px;line-height:1.55;white-space:pre-line}
-.modal{position:fixed;inset:0;z-index:100;background:rgba(20,15,12,.6);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:20px;animation:fi .4s var(--ease) both}
-.dlg{width:min(560px,100%);max-height:calc(100% - 24px);overflow:auto;background:var(--iv);border-radius:28px;padding:36px;color:var(--ink)}
-.x{border:1px solid var(--hair);background:transparent;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center}
-.stack{display:grid;gap:14px}
-.px{will-change:transform}
-@supports (animation-timeline: view()){
-.rv{animation:rv both var(--ease);animation-timeline:view();animation-range:entry 4% cover 26%}
-.px{animation:pxm linear both;animation-timeline:view();animation-range:cover 0% cover 100%}
-}
-@keyframes rv{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
-@keyframes pxm{from{transform:translateY(36px)}to{transform:translateY(-36px)}}
+.gd a{color:inherit}
+.gd :focus-visible{outline:2px solid var(--lantern);outline-offset:3px}
+.gd img{max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding-inline:32px}
+.h1{font-size:var(--t-3xl);line-height:1.02;margin:0;letter-spacing:-.01em}
+.gd.ar .h1{line-height:1.3}
+.h2{font-size:var(--t-2xl);line-height:1.08;margin:0}
+.gd.ar .h2{line-height:1.4}
+.h3{font-size:var(--t-xl);line-height:1.2;margin:0}
+.lead{font-size:var(--t-m);color:var(--mute);max-width:58ch;margin:16px 0 0}
+.note{font-size:var(--t-xs);color:var(--mute);margin:18px 0 0;max-width:72ch}
+.sec{padding:112px 0}
 
-/* photos */
-.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-.hero .ph{transform:scale(1.2);transform-origin:50% 66%}
-.scene .lay img.ph{transition:transform 6s var(--ease)}
-.scene:hover .lay img.ph{transform:scale(1.03)}
-.mo .ph{z-index:-3}
-.mo::before{content:'';position:absolute;inset:0;z-index:-2;background:linear-gradient(180deg,rgba(10,20,15,.2) 0%,rgba(10,20,15,.55) 45%,rgba(10,20,15,.88) 100%)}
-.mo.day,.mo.eve{color:#fff;min-height:440px}
-.mo.day .when{color:#F3D9A4;opacity:1}
-.tile .ph{transition:transform 1.2s var(--ease)}
-.tile:hover .ph{transform:scale(1.05)}
-.photo-credit{display:flex;gap:10px;align-items:center}
-/* moments + inclusions */
-.moments{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:56px}
-.mo{position:relative;border-radius:28px;padding:34px 32px;overflow:hidden;isolation:isolate;min-height:330px;display:flex;flex-direction:column}
-.mo.day{background:#6b5a3c}
-.mo.eve{background:#0f1d16}
-.mo .when{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;opacity:.75}
-.mo h3{font-size:clamp(30px,3.2vw,42px);font-weight:300;line-height:1.15;margin:10px 0 0}
-.mo p{margin:12px 0 0;opacity:.85;max-width:440px}
-.mo ul{list-style:none;padding:0;margin:auto 0 0;padding-top:22px;display:flex;flex-wrap:wrap;gap:8px}
-.mo li{font-size:13px;padding:7px 14px;border-radius:999px;border:1px solid color-mix(in srgb,currentColor 30%,transparent)}
-.mo .orn{position:absolute;inset-inline-end:-24px;top:-24px;width:190px;height:190px;opacity:.25;z-index:-1}
-.inc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;margin-top:20px;background:var(--hair);border:1px solid var(--hair);border-radius:28px;overflow:hidden}
-.inc div{background:#fff;padding:26px 24px}
-.inc svg{color:var(--goldd)}
-.inc b{display:block;font-weight:500;font-size:15.5px;margin-top:14px}
-.inc small{display:block;font-size:13px;opacity:.7;margin-top:4px;line-height:1.5}
-.minp{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:12.5px;font-weight:500;padding:6px 12px;border-radius:999px;background:color-mix(in srgb,var(--gold) 18%,transparent);align-self:flex-start}
-.dkt .minp{background:rgba(217,188,130,.16);color:var(--goldl)}
-.seg.s3 button{font-size:13px}
+/* buttons: square-ish corners on purpose; the arches carry the curves */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:6px;border:1.5px solid transparent;font-weight:600;font-size:var(--t-s);text-decoration:none;white-space:nowrap;transition:background-color .25s,color .25s,border-color .25s,transform .2s var(--ease)}
+.btn:active{transform:translateY(1px)}
+.btn-v{background:var(--velvet);color:#fff}
+.btn-v:hover{background:var(--velvet-d)}
+.btn-line{border-color:currentColor;background:transparent}
+.btn-line:hover{background:color-mix(in srgb,currentColor 10%,transparent)}
+.btn-amber{background:var(--lantern);color:var(--ink)}
+.btn-amber:hover{background:#f2b558}
+.btn-wa{background:#1d6e47;color:#fff}
+.btn-wa:hover{background:#155636}
+.btn svg{flex:none}
+
+/* top bar */
+.bar{position:sticky;top:0;z-index:60;background:var(--palm);color:#fff;border-bottom:1px solid var(--line-d)}
+.bar-in{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:68px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand-n{font-family:'Marcellus',Georgia,serif;font-size:21px;line-height:1;letter-spacing:.02em;white-space:nowrap}
+.brand-n small{display:block;font-size:12px;letter-spacing:.24em;opacity:.7;margin-top:4px}
+.links{display:flex;gap:28px;font-size:var(--t-s)}
+.links a{text-decoration:none;opacity:.85;padding:8px 0;border-bottom:1.5px solid transparent;transition:opacity .2s,border-color .2s}
+.links a:hover{opacity:1;border-color:var(--lantern)}
+.bar-end{display:flex;align-items:center;gap:14px}
+.lang{display:flex;gap:2px}
+.lang button{border:0;background:transparent;color:#fff;opacity:.6;min-width:44px;min-height:44px;padding:0 8px;font-size:var(--t-s);font-weight:600;border-bottom:2px solid transparent;transition:opacity .2s,border-color .3s var(--ease)}
+.lang button.on{opacity:1;border-color:var(--lantern)}
+.lang button:last-child{font-family:'IBM Plex Sans Arabic',sans-serif}
+.bar .btn{min-height:42px;padding:0 18px}
+
+/* hero */
+.hero{background:var(--palm);color:#fff;position:relative;overflow:hidden}
+.hero-in{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.75fr);gap:48px;align-items:end;padding-top:56px}
+.hero-copy{padding-bottom:72px}
+.bio-name{margin:0 0 22px;font-size:var(--t-s);color:#cfe0d4}
+.h1 .ln{display:block;overflow:hidden;padding-bottom:.08em}
+@media (min-width:1001px){.h1 .ln{white-space:nowrap}}
+.h1 .ln>span{display:block}
+.bio-lines{margin:28px 0 0;font-size:var(--t-l);line-height:1.45;color:#e9efe9}
+.bio-lines span{display:block}
+.bio-meta{list-style:none;margin:26px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px 28px;font-size:var(--t-s);color:#cfe0d4}
+.bio-meta li{display:flex;align-items:center;gap:8px}
+.bio-meta a{text-decoration:none}
+.bio-meta a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
+.bio-meta svg{color:var(--lantern)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.arch{position:relative;overflow:hidden;border-radius:1000px 1000px 0 0;background:var(--palm-d);isolation:isolate}
+.hero-arch{aspect-ratio:.7;width:100%;max-width:470px;justify-self:end;border:1px solid rgba(232,163,61,.35);border-bottom:0}
+.arch-ph{position:absolute;inset:0}
+.arch .ph{position:absolute;inset:-16% 0 -14%;width:100%;height:130%;object-fit:cover;display:block}
+.hero-arch .ph{inset:-18% 0 -16%;height:134%;object-position:50% 70%}
+.drape{display:none;position:absolute;top:0;bottom:0;width:50.5%;z-index:2;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.28),rgba(0,0,0,0) 30%,rgba(0,0,0,0) 70%,rgba(0,0,0,.3)),
+    repeating-linear-gradient(90deg,#7d141b 0 16px,#a8242d 16px 30px,#8c1a21 30px 46px,#b02a33 46px 54px,#7d141b 54px 70px)}
+.drape.l{left:0}
+.drape.r{right:0}
+.mo .drape{display:block}
+.mo .hero .ln>span{transform:translateY(106%)}
+.mo .hero [data-fade]{opacity:0}
+
+/* date check */
+.check{background:#fff;border-bottom:1px solid var(--line);padding:36px 0}
+.check-in{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) minmax(0,1fr) auto;gap:20px;align-items:end}
+.check .h3{font-size:var(--t-l);align-self:center}
+.gd.ar .check .h3{font-size:26px}
+.fld{display:flex;flex-direction:column;gap:6px;font-size:var(--t-xs);color:var(--mute);font-weight:500}
+.inp{width:100%;min-height:48px;border-radius:6px;border:1.5px solid var(--line);background:#fff;padding:0 14px;font-size:var(--t-s);color:var(--ink)}
+.inp:focus{border-color:var(--palm);outline:0}
+.step{display:flex;align-items:center;justify-content:space-between;min-height:48px;border-radius:6px;border:1.5px solid var(--line);padding:0 4px}
+.step button{width:40px;height:40px;border:0;border-radius:4px;background:transparent;font-size:20px;line-height:1}
+.step button:hover{background:var(--plaster)}
+.step b{font-weight:600;font-variant-numeric:tabular-nums}
+.result{margin-top:18px;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between;padding:16px 18px;border-radius:6px;background:var(--plaster);font-size:var(--t-s)}
+.result b{font-weight:600}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-inline-end:8px;vertical-align:middle}
+.result small{display:block;color:var(--mute);font-size:var(--t-xs);margin-top:2px}
+
+/* the day */
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px;margin-top:56px}
+.moment .arch{aspect-ratio:4/4.6}
+.moment .when{margin:22px 0 4px;font-size:var(--t-s);color:var(--velvet);font-weight:600}
+.moment p{margin:10px 0 0;color:var(--mute);max-width:52ch}
+.moment .list{color:var(--ink)}
+.inc-h{margin-top:96px}
+.inc{list-style:none;padding:0;margin:28px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px;border-top:1px solid var(--line)}
+.inc li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
+.inc svg{color:var(--velvet);margin-top:3px}
+.inc b{display:block;font-weight:600}
+.inc span{display:block;color:var(--mute);font-size:var(--t-s)}
+
+/* spaces */
+.sp{background:var(--plaster);transition:background-color 1.1s var(--ease),color 1.1s var(--ease)}
+.sp.night{background:var(--palm-d);color:#eef3ee}
+.sp.night .lead,.sp.night .sp-info p{color:#b9cabe}
+.sp-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:24px}
+.sw{display:inline-flex;align-items:center;gap:12px;border:0;background:transparent;padding:6px 0;font-size:var(--t-s);font-weight:600}
+.sw-t{opacity:.5;transition:opacity .4s}
+.sw[aria-checked="false"] .sw-t:first-child,.sw[aria-checked="true"] .sw-t:last-child{opacity:1}
+.sw-k{position:relative;width:64px;height:34px;border-radius:999px;background:var(--lantern);transition:background-color .6s var(--ease)}
+.sw-k i{position:absolute;top:4px;inset-inline-start:4px;width:26px;height:26px;border-radius:50%;background:#fff;transition:inset-inline-start .45s var(--snap)}
+.sp.night .sw-k{background:#2f4f8a}
+.sp.night .sw-k i{inset-inline-start:34px}
+.tabs{position:relative;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);margin-top:44px;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
+.sp.night .tabs,.food .tabs{border-color:var(--line-d)}
+.tabs button{border:0;background:transparent;padding:14px 8px;text-align:start;font-size:var(--t-m);font-weight:500;opacity:.6;white-space:nowrap;transition:opacity .3s}
+.tabs button.on{opacity:1}
+.tabs i{position:absolute;bottom:-1px;height:2px;background:var(--velvet);transition:inset-inline-start .45s var(--snap),width .45s var(--snap)}
+.sp.night .tabs i,.food .tabs i{background:var(--lantern)}
+.sp-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:56px;margin-top:40px;align-items:start}
+.scene{position:relative;aspect-ratio:4/3.2;border-radius:6px;overflow:hidden;isolation:isolate;background:#223}
+.scene>.lay{position:absolute;inset:0;transition:opacity 1s var(--ease)}
+.scene svg{width:100%;height:100%;display:block}
+.scene .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.nightov{position:absolute;inset:0;background:#171c3d;mix-blend-mode:multiply;transition:opacity 1.2s var(--ease);pointer-events:none}
+.tw{animation:none}
+.sp-info h3{margin-bottom:12px}
+.sp-info p{margin:0;color:var(--mute);min-height:5.2em}
+.specs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin:28px 0 0;border-top:1px solid currentColor;border-color:color-mix(in srgb,currentColor 22%,transparent)}
+.specs div{padding:16px 0}
+.specs dt{font-size:var(--t-xs);opacity:.7}
+.specs dd{margin:2px 0 0;font-size:var(--t-xl);font-family:'Marcellus',Georgia,serif;font-variant-numeric:tabular-nums}
+.amen{list-style:none;margin:8px 0 0;padding:0}
+.amen li{display:flex;gap:12px;align-items:center;padding:9px 0;font-size:var(--t-s)}
+.amen svg{flex:none;color:var(--velvet)}
+.sp.night .amen svg{color:var(--lantern)}
+.sp-info .btn{margin-top:24px}
+
+/* packages */
+.tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:56px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tier{display:flex;flex-direction:column;padding:32px 28px 30px;border-inline-start:1px solid var(--line);position:relative;transition:background-color .35s}
+.tier:first-child{border-inline-start:0}
+.tier::before{content:'';position:absolute;top:-1px;inset-inline:0;height:3px;background:var(--velvet);transform:scaleX(0);transition:transform .5s var(--ease)}
+.tier.on{background:var(--plaster)}
+.tier.on::before{transform:none}
+.tier .h3{font-size:var(--t-xl)}
+.price{margin:18px 0 0;font-size:var(--t-s);color:var(--mute)}
+.price b{display:block;font-family:'Marcellus',Georgia,serif;font-weight:400;font-size:clamp(40px,4vw,52px);line-height:1;color:var(--ink);font-variant-numeric:tabular-nums;margin-bottom:6px}
+.min{margin:12px 0 0;font-size:var(--t-s);font-weight:600;color:var(--velvet)}
+.tier ul{list-style:none;padding:0;margin:22px 0 28px;flex:1}
+.tier li{padding:8px 0;font-size:var(--t-s);border-top:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
+.tier .btn{align-self:flex-start}
+
+.sim{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.9fr);gap:48px;margin-top:96px;align-items:start}
+.sim .h3{margin-bottom:8px}
+.ctl{margin-top:30px}
+.lbl{display:flex;justify-content:space-between;align-items:baseline;gap:16px;font-size:var(--t-s);font-weight:600}
+.bignum{font-family:'Marcellus',Georgia,serif;font-weight:400;font-size:44px;line-height:1;font-variant-numeric:tabular-nums}
+.range{-webkit-appearance:none;appearance:none;width:100%;height:3px;background:linear-gradient(90deg,var(--velvet) var(--p,40%),var(--line) var(--p,40%));margin:22px 0 8px;border-radius:2px}
+.gd.ar .range{background:linear-gradient(270deg,var(--velvet) var(--p,40%),var(--line) var(--p,40%))}
+.range::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:#fff;border:2px solid var(--velvet);cursor:grab}
+.range::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#fff;border:2px solid var(--velvet);cursor:grab}
+.minmax{display:flex;justify-content:space-between;font-size:var(--t-xs);color:var(--mute)}
+.seg{position:relative;display:flex;margin-top:12px;border:1.5px solid var(--line);border-radius:6px;padding:3px}
+.seg button{position:relative;z-index:1;flex:1;border:0;background:transparent;min-height:44px;border-radius:4px;font-size:var(--t-s);font-weight:500;padding:0 8px;line-height:1.25;transition:color .3s}
+.seg button.on{color:#fff}
+.seg i{position:absolute;top:3px;bottom:3px;border-radius:4px;background:var(--palm);transition:inset-inline-start .45s var(--snap)}
+.adds{display:grid;gap:8px;margin-top:12px}
+.add{display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:14px;align-items:center;text-align:start;width:100%;padding:14px 16px;border-radius:6px;border:1.5px solid var(--line);background:#fff;transition:border-color .25s,background-color .25s}
+.add.on{border-color:var(--velvet);background:#fbf3f3}
+.add .ck{width:22px;height:22px;border-radius:4px;border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;color:transparent;transition:all .25s}
+.add.on .ck{background:var(--velvet);border-color:var(--velvet);color:#fff}
+.add b{display:block;font-weight:600;font-size:var(--t-s)}
+.add small{display:block;color:var(--mute);font-size:var(--t-xs);line-height:1.4}
+.add em{font-style:normal;font-size:var(--t-xs);font-weight:600;color:var(--velvet);white-space:nowrap}
+.rcpt{position:sticky;top:96px;background:var(--palm);color:#eef3ee;border-radius:6px;padding:32px}
+.rcpt .lbl{color:#b9cabe;font-weight:500}
+.total{font-family:'Marcellus',Georgia,serif;font-size:clamp(42px,4.6vw,60px);line-height:1.05;color:var(--lantern);margin-top:6px;font-variant-numeric:tabular-nums}
+.total small{font-size:.38em;margin-inline-end:10px;color:#eef3ee}
+.rcpt hr{border:0;border-top:1px solid var(--line-d);margin:20px 0}
+.line{display:flex;justify-content:space-between;gap:16px;font-size:var(--t-s);padding:5px 0}
+.line span:last-child{font-variant-numeric:tabular-nums;white-space:nowrap}
+.rcpt .fine{font-size:var(--t-xs);color:#b9cabe;margin:0 0 10px}
+.rcpt .btn{width:100%;margin-top:12px}
+
+/* food */
+.food{background:var(--palm);color:#eef3ee}
+.food .lead,.food .menu-desc{color:#b9cabe}
+.food-in{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:72px;align-items:center}
+.menu-desc{margin:24px 0 0;min-height:3.2em}
+.mlist{list-style:none;padding:0;margin:14px 0 32px;columns:2;column-gap:40px}
+.mlist li{break-inside:avoid;padding:12px 0;border-bottom:1px solid var(--line-d)}
+.food-arch{aspect-ratio:4/5.2;max-width:440px;justify-self:end;width:100%;border:1px solid rgba(232,163,61,.35);border-bottom:0}
+
+/* weddings */
+.we-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1.5px solid var(--line);background:transparent;min-height:42px;padding:0 16px;border-radius:6px;font-size:var(--t-s);font-weight:500;transition:all .25s}
+.chip:hover{border-color:var(--ink)}
+.chip.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.look{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:36px}
+.tile{position:relative;margin:0;aspect-ratio:4/5;border-radius:6px;overflow:hidden;background:var(--plaster)}
+.tile .ph{position:absolute;inset:-14% 0 -14%;width:100%;height:128%;object-fit:cover}
+.tile figcaption{position:absolute;inset-inline:0;bottom:0;padding:40px 18px 16px;color:#fff;font-size:var(--t-s);font-weight:500;background:linear-gradient(0deg,rgba(10,25,18,.75),rgba(10,25,18,0))}
+.note a{color:var(--velvet);font-weight:600}
+
+/* visit */
+.visit{background:var(--plaster)}
+.visit-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:start}
+.visit ul{list-style:none;padding:0;margin:28px 0 0}
+.visit li{display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.visit li svg{color:var(--velvet);flex:none}
+.panel{background:#fff;border-radius:6px;padding:32px;border:1px solid var(--line)}
+.panel .seg{margin-top:0}
+.desc{font-size:var(--t-s);color:var(--mute);margin:14px 0 0;min-height:3.2em}
+.stack{display:grid;gap:14px;margin-top:16px}
+.slots{display:flex;flex-wrap:wrap;gap:8px}
+.slot{border:1.5px solid var(--line);background:#fff;min-height:44px;padding:0 16px;border-radius:6px;font-size:var(--t-s);font-variant-numeric:tabular-nums;transition:all .2s}
+.slot.on{background:var(--palm);border-color:var(--palm);color:#fff}
+.err{font-size:var(--t-s);color:var(--velvet);margin:0}
+.done{display:flex;gap:14px;align-items:flex-start;padding:18px;border-radius:6px;background:#eef4ec;border:1px solid #bcd0b8}
+.done p{margin:4px 0 0;font-size:var(--t-s);color:var(--mute)}
+
+/* footer */
+.foot{background:var(--palm-d);color:#cfe0d4;padding:72px 0 120px;font-size:var(--t-s)}
+.foot-in{display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between}
+.foot .disp{font-size:34px;color:#fff;margin:0}
+.foot p{max-width:40ch;margin:14px 0 0}
+.foot-c{display:grid;gap:6px;align-content:start}
+.foot-c a{text-decoration:none;padding:4px 0}
+.foot-c a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
+
+/* whatsapp */
+.wa{position:fixed;inset-inline-end:20px;bottom:20px;z-index:80;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.wa-btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 20px 0 16px;border-radius:999px;border:0;background:#1d6e47;color:#fff;font-weight:600;font-size:var(--t-s);box-shadow:0 10px 30px -12px rgba(10,40,25,.7);transition:background-color .2s}
+.wa-btn:hover{background:#155636}
+.wa-card{width:min(340px,calc(100vw - 40px));background:#fff;color:var(--ink);border-radius:8px;overflow:hidden;box-shadow:0 30px 60px -24px rgba(10,30,20,.5);border:1px solid var(--line)}
+.wa-card header{background:#1d6e47;color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;font-size:var(--t-s);font-weight:600}
+.wa-pre{padding:14px 16px 0;font-size:var(--t-xs);color:var(--mute);margin:0}
+.wa-msg{margin:10px 16px 16px;padding:12px 14px;border-radius:4px 12px 12px 12px;background:#e5f2dc;font-size:var(--t-s);line-height:1.5;white-space:pre-line}
+.wa-card .btn{width:calc(100% - 32px);margin:0 16px 16px}
+.x{flex:none;border:1px solid currentColor;background:transparent;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:.8}
+.x:hover{opacity:1}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:100;background:rgba(10,30,20,.55);display:flex;align-items:center;justify-content:center;padding:20px}
+.dlg{width:min(540px,100%);max-height:calc(100% - 24px);overflow:auto;background:#fff;border-radius:8px;padding:32px;color:var(--ink)}
+.dlg-h{display:flex;justify-content:space-between;align-items:start;gap:16px}
+
 @media (max-width:1000px){
-.hero-in,.sp-grid,.sim,.menu-grid,.tour{grid-template-columns:minmax(0,1fr)}
-.tiers,.quotes,.moments{grid-template-columns:minmax(0,1fr)}
-.inc{grid-template-columns:repeat(2,minmax(0,1fr))}
-.nav-links{display:none}
-.facts-in{grid-template-columns:repeat(2,minmax(0,1fr))}
-.fact:nth-child(3){border-inline-start:0;padding-inline-start:0}
-.sec{padding:84px 0}
-.rcpt{position:static}
-.scroll-i{display:none}
-.look{grid-template-columns:repeat(6,minmax(0,1fr))}
-.tile{grid-column:span 3!important;grid-row:span 2!important}
-.hero-in{padding-top:130px}
+  .links{display:none}
+  .hero-in,.sp-grid,.sim,.food-in,.visit-in,.two{grid-template-columns:minmax(0,1fr)}
+  .hero-in{gap:32px;padding-top:32px;min-height:0}
+  .hero-arch{order:-1;justify-self:center;max-width:min(420px,78vw)}
+  .hero-copy{padding-bottom:64px}
+  .check-in{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .check .h3{grid-column:1/-1}
+  .check .btn{grid-column:1/-1}
+  .tiers{grid-template-columns:minmax(0,1fr)}
+  .tier{border-inline-start:0;border-top:1px solid var(--line)}
+  .tier:first-child{border-top:0}
+  .rcpt{position:static}
+  .sec{padding:80px 0}
+  .look{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .food-arch{justify-self:center}
+  .inc{grid-template-columns:minmax(0,1fr)}
 }
 @media (max-width:560px){
-.wrap{padding-inline:18px}
-.long{display:none}
-.short{display:inline}
-.nav{padding-inline-start:14px;gap:8px}
-.panel,.rcpt,.dlg{padding:22px}
-.tile{grid-column:span 6!important}
-.specs b{font-size:30px}
-.nav .btn{padding:0 14px;font-size:13px}
-.nav>a .serif{font-size:20px!important;white-space:nowrap}
-.nav>a .track{display:none}
-.nav>a>svg{width:32px;height:32px}
-.lang button{min-width:38px;padding:0 8px}
-.price{font-size:44px}
-.inc{grid-template-columns:minmax(0,1fr)}
-.mo{padding:26px 22px;min-height:0}
+  .wrap{padding-inline:18px}
+  .bar .btn{display:none}
+  .brand-n small{display:none}
+  .check-in{grid-template-columns:minmax(0,1fr)}
+  .mlist{columns:1}
+  .look{grid-template-columns:minmax(0,1fr)}
+  .panel,.rcpt,.dlg{padding:22px}
+  .wa-btn span{display:none}
+  .wa-btn{padding:0 15px}
+  .tabs button{font-size:15px}
 }
 @media (prefers-reduced-motion:reduce){
-.kb,.ml>span,.fade-in,.tile,.wa-pill,.tw,.scroll-i i::after{animation:none!important}
-.ml>span{transform:none}.fade-in{opacity:1}
-.rv,.px{animation:none!important}
+  .gd *{transition:none!important}
 }
 </style>
-
 </head>
 <body>
 <div id="app"></div>
 <template id="tpl">
-
-
 <div class="gd {{langCls}}" dir="{{dir}}">
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
@@ -289,133 +331,112 @@ html{scroll-behavior:smooth}body{margin:0}
 <radialGradient id="gGlow"><stop offset="0" stop-color="#ffe8ad" stop-opacity=".95"/><stop offset="1" stop-color="#ffe8ad" stop-opacity="0"/></radialGradient>
 </defs></svg>
 
-<!-- FLOATING NAV -->
-<div class="navw">
-<nav class="nav" aria-label="Main">
-<a href="#top" style="display:flex;align-items:center;gap:12px">
-<svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#D9BC82" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#173328" stroke="#D9BC82" stroke-opacity=".5"/><path d="M12 29c-4-4-5-10-2-15M28 29c4-4 5-10 2-15"/><g fill="#D9BC82" stroke="none"><ellipse cx="9.6" cy="17" rx="1.2" ry="2.6" transform="rotate(-20 9.6 17)"/><ellipse cx="9.4" cy="22" rx="1.2" ry="2.6" transform="rotate(-45 9.4 22)"/><ellipse cx="11.6" cy="26.4" rx="1.2" ry="2.6" transform="rotate(-65 11.6 26.4)"/><ellipse cx="30.4" cy="17" rx="1.2" ry="2.6" transform="rotate(20 30.4 17)"/><ellipse cx="30.6" cy="22" rx="1.2" ry="2.6" transform="rotate(45 30.6 22)"/><ellipse cx="28.4" cy="26.4" rx="1.2" ry="2.6" transform="rotate(65 28.4 26.4)"/></g><path d="M20 11v6M17.5 13.5c1.5 0 2.5 1 2.5 2.5 0-1.5 1-2.5 2.5-2.5"/><path d="M15 23h10"/></svg>
-<span style="display:flex;flex-direction:column;line-height:1.05"><span class="serif" style="font-size:24px;font-weight:400">The Garden</span><span class="track" style="font-size:9px;letter-spacing:.34em;text-transform:uppercase;opacity:.8">{{t.brandSub}}</span></span>
+<header class="bar">
+<div class="wrap bar-in">
+<a class="brand" href="#top" aria-label="The Garden Venue">
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#E8A33D" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#0F2C20" stroke-opacity=".55"/><path d="M12 29c-4-4-5-10-2-15M28 29c4-4 5-10 2-15"/><g fill="#E8A33D" stroke="none"><ellipse cx="9.6" cy="17" rx="1.2" ry="2.6" transform="rotate(-20 9.6 17)"/><ellipse cx="9.4" cy="22" rx="1.2" ry="2.6" transform="rotate(-45 9.4 22)"/><ellipse cx="11.6" cy="26.4" rx="1.2" ry="2.6" transform="rotate(-65 11.6 26.4)"/><ellipse cx="30.4" cy="17" rx="1.2" ry="2.6" transform="rotate(20 30.4 17)"/><ellipse cx="30.6" cy="22" rx="1.2" ry="2.6" transform="rotate(45 30.6 22)"/><ellipse cx="28.4" cy="26.4" rx="1.2" ry="2.6" transform="rotate(65 28.4 26.4)"/></g><path d="M20 11v6M17.5 13.5c1.5 0 2.5 1 2.5 2.5 0-1.5 1-2.5 2.5-2.5"/><path d="M15 23h10"/></svg>
+<span class="brand-n">The Garden<small>Venue</small></span>
 </a>
-<div class="nav-links">
-<a href="#moments">{{t.nMoments}}</a><a href="#spaces">{{t.nSpaces}}</a><a href="#packages">{{t.nPackages}}</a><a href="#catering">{{t.nCatering}}</a><a href="#weddings">{{t.nWeddings}}</a><a href="#tour">{{t.nVisit}}</a>
-</div>
-<div style="display:flex;align-items:center;gap:10px">
-<div class="lang" role="group" aria-label="Language">
-<i style="inset-inline-start: {{langX}}"></i>
-<button class="{{enOn}}" onClick="{{setEn}}" aria-pressed="{{enPressed}}">EN</button>
-<button class="{{arOn}}" onClick="{{setAr}}" aria-pressed="{{arPressed}}">عربي</button>
-</div>
-<a href="#check" class="btn btn-g" style="min-height:44px"><span class="long">{{t.navCta}}</span><span class="short">{{t.navCtaShort}}</span></a>
-</div>
+<nav class="links" aria-label="{{t.navAria}}">
+<a href="#day">{{t.nDay}}</a><a href="#spaces">{{t.nSpaces}}</a><a href="#packages">{{t.nPackages}}</a><a href="#food">{{t.nFood}}</a><a href="#weddings">{{t.nWeddings}}</a><a href="#visit">{{t.nVisit}}</a>
 </nav>
+<div class="bar-end">
+<div class="lang" role="group" aria-label="Language">
+<button class="{{enOn}}" onClick="{{setEn}}" aria-pressed="{{enPressed}}" lang="en">EN</button>
+<button class="{{arOn}}" onClick="{{setAr}}" aria-pressed="{{arPressed}}" lang="ar">عربي</button>
 </div>
-
-<!-- HERO -->
-<header class="hero" id="top">
-<div class="kb">
-<img class="ph" src="images/ig/DegYWYUm_gs.jpg" alt="{{t.heroAlt}}" style="object-position:50% 62%" fetchpriority="high">
+<a href="#check" class="btn btn-v">{{t.navCta}}</a>
 </div>
-<div class="hero-shade"></div>
-<div class="scroll-i" aria-hidden="true"><span>{{t.scroll}}</span><i></i></div>
+</div>
+</header>
 
-<div class="wrap hero-in" style="width:100%">
-<div>
-<div class="eyebrow track fade-in" style="color:#E7D3A6;animation-delay:.2s">{{t.eyebrow}}</div>
-<h1 class="h1 serif">
-<span class="ml"><span>{{t.h1a}}</span></span>
-<span class="ml"><span>{{t.h1b}}</span></span>
-<span class="ml"><span style="font-style:{{italicStyle}};color:#E7D3A6">{{t.h1c}}</span></span>
+<!-- HERO: the Instagram bio, word for word -->
+<section class="hero" id="top">
+<div class="wrap hero-in">
+<div class="hero-copy">
+<p class="bio-name" data-fade data-motion>{{t.bioName}}</p>
+<h1 class="h1">
+<span class="ln"><span data-motion>{{t.h1a}}</span></span>
+<span class="ln"><span data-motion>{{t.h1b}}</span></span>
 </h1>
-<p class="fade-in" style="max-width:520px;font-size:18px;opacity:.9;margin:28px 0 0;animation-delay:1.1s">{{t.sub}}</p>
+<p class="bio-lines" data-fade data-motion><span>{{t.bio1}}</span><span>{{t.bio2}}</span></p>
+<ul class="bio-meta" data-fade data-motion>
+<li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>{{t.bioLoc}}</li>
+<li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg><a href="tel:+201003863568" dir="ltr">0100 386 3568</a></li>
+</ul>
+<div class="hero-cta" data-fade data-motion>
+<a class="btn btn-v" href="{{waUrl}}" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>{{t.heroWa}}</a>
+<a class="btn btn-line" href="#packages">{{t.heroPk}}</a>
 </div>
+</div>
+<figure class="arch hero-arch" style="margin:0">
+<div class="arch-ph" data-motion><img class="ph" src="images/ig/DegYWYUm_gs.jpg" alt="{{t.heroAlt}}" fetchpriority="high" data-motion></div>
+<i class="drape l" data-motion aria-hidden="true"></i><i class="drape r" data-motion aria-hidden="true"></i>
+</figure>
+</div>
+</section>
 
-<div class="glass fade-in" id="check" style="padding:28px;animation-delay:1.2s">
-<div class="serif" style="font-size:30px;line-height:1.1;font-weight:400">{{t.ckTitle}}</div>
-<div class="stack" style="margin-top:20px">
-<label class="field track"><span>{{t.ckDate}}</span><input class="inp" type="date" min="{{today}}" value="{{date}}" onChange="{{onDate}}"></label>
-<div class="field track"><span>{{t.ckGuests}}</span>
-<div class="step"><button aria-label="-10" onClick="{{guestsDec}}">−</button><span style="font-size:20px;letter-spacing:0;text-transform:none">{{guestsFmt}}</span><button aria-label="+10" onClick="{{guestsInc}}">+</button></div></div>
-<button class="btn btn-g" onClick="{{check}}" style="width:100%">{{t.ckBtn}}</button>
+<!-- DATE CHECK -->
+<section class="check" id="check">
+<div class="wrap">
+<div class="check-in">
+<h2 class="h3">{{t.ckTitle}}</h2>
+<label class="fld"><span>{{t.ckDate}}</span><input class="inp" type="date" min="{{today}}" value="{{date}}" onChange="{{onDate}}"></label>
+<div class="fld"><span>{{t.ckGuests}}</span>
+<div class="step"><button aria-label="{{t.fewer}}" onClick="{{guestsDec}}">−</button><b>{{guestsFmt}}</b><button aria-label="{{t.more}}" onClick="{{guestsInc}}">+</button></div></div>
+<button class="btn btn-v" onClick="{{check}}">{{t.ckBtn}}</button>
+</div>
 <sc-if value="{{hasAvail}}" hint-placeholder-val="{{false}}">
 <div class="result" role="status">
-<div style="display:flex;align-items:center;font-weight:500"><span class="dot" style="background: {{availColor}}"></span>{{availTitle}}</div>
-<sc-if value="{{hasNext}}" hint-placeholder-val="{{false}}"><div style="margin-top:6px;opacity:.85">{{t.next}}: <b style="font-weight:600">{{nextDate}}</b></div></sc-if>
-<div style="margin-top:8px;font-size:12px;opacity:.7">{{t.ckNote}}</div>
-<a class="btn btn-wa" href="{{waUrl}}" target="_blank" rel="noopener" style="margin-top:12px;width:100%;min-height:44px">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>{{t.ckWa}}</a>
+<div><b><span class="dot" style="background: {{availColor}}"></span>{{availTitle}}</b>
+<sc-if value="{{hasNext}}" hint-placeholder-val="{{false}}"><small>{{t.next}}: {{nextDate}}</small></sc-if>
+<small>{{t.ckNote}}</small></div>
+<a class="btn btn-wa" href="{{waUrl}}" target="_blank" rel="noopener">{{t.ckWa}}</a>
 </div>
 </sc-if>
 </div>
-</div>
-</div>
+</section>
 
-<div class="facts"><div class="wrap facts-in" style="color:#fff">
-<div class="fact"><small>{{t.f1l}}</small><b class="serif">{{t.f1v}}</b></div>
-<div class="fact"><small>{{t.f2l}}</small><b class="serif">{{t.f2v}}</b></div>
-<div class="fact"><small>{{t.f3l}}</small><b class="serif">{{t.f3v}}</b></div>
-<div class="fact"><small>{{t.f4l}}</small><b class="serif">{{t.f4v}}</b></div>
-</div></div>
-</header>
-
-<!-- MOMENTS: KATB KETAB vs RECEPTION + INCLUDED -->
-<section class="sec" id="moments">
+<!-- THE DAY: KATB KETAB + RECEPTION -->
+<section class="sec" id="day">
 <div class="wrap">
-<div class="rv">
-<div class="eyebrow track">{{t.moEyebrow}}</div>
-<h2 class="h2 serif">{{t.moTitle}}</h2>
+<h2 class="h2">{{t.moTitle}}</h2>
 <p class="lead">{{t.moSub}}</p>
-</div>
-<div class="moments">
-<div class="mo day rv">
-<img class="ph" src="images/ig/DegY4opG2nA.jpg" alt="{{t.altDay}}" style="object-position:50% 55%" loading="lazy">
-<svg class="orn" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="50" cy="50" r="18"/><path d="M50 14v10M50 76v10M14 50h10M76 50h10M24 24l7 7M69 69l7 7M24 76l7-7M69 31l7-7"/></svg>
-<div class="when track">{{t.moDayWhen}}</div>
-<h3 class="serif">{{t.moDayTitle}}</h3>
+<div class="two">
+<article class="moment">
+<div class="arch"><img class="ph" src="images/ig/DegY4opG2nA.jpg" alt="{{t.altDay}}" style="object-position:50% 55%" loading="lazy"></div>
+<p class="when">{{t.moDayWhen}}</p>
+<h3 class="h3">{{t.moDayTitle}}</h3>
 <p>{{t.moDaySub}}</p>
-<ul><sc-for list="{{dayTags}}" as="x" hint-placeholder-count="4"><li>{{x}}</li></sc-for></ul>
-</div>
-<div class="mo eve rv">
-<img class="ph" src="images/ig/DegX71uGwtq.jpg" alt="{{t.altEve}}" style="object-position:50% 40%" loading="lazy">
-<svg class="orn" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M70 60A28 28 0 1 1 40 22a22 22 0 0 0 30 38z"/><circle cx="78" cy="24" r="2"/><circle cx="86" cy="40" r="1.5"/></svg>
-<div class="when track" style="color:var(--goldl)">{{t.moEveWhen}}</div>
-<h3 class="serif">{{t.moEveTitle}}</h3>
+<p class="list">{{dayList}}</p>
+</article>
+<article class="moment">
+<div class="arch"><img class="ph" src="images/ig/DegX71uGwtq.jpg" alt="{{t.altEve}}" style="object-position:50% 40%" loading="lazy"></div>
+<p class="when">{{t.moEveWhen}}</p>
+<h3 class="h3">{{t.moEveTitle}}</h3>
 <p>{{t.moEveSub}}</p>
-<ul><sc-for list="{{eveTags}}" as="x" hint-placeholder-count="4"><li>{{x}}</li></sc-for></ul>
+<p class="list">{{eveList}}</p>
+</article>
 </div>
-</div>
-<div class="eyebrow track" style="margin-top:64px">{{t.incEyebrow}}</div>
-<div class="inc rv">
-<sc-for list="{{incItems}}" as="ic" hint-placeholder-count="8"><div><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{ic.d}}"/></svg><b>{{ic.name}}</b><small>{{ic.desc}}</small></div></sc-for>
-</div>
+<h3 class="h3 inc-h">{{t.incTitle}}</h3>
+<ul class="inc">
+<sc-for list="{{incItems}}" as="ic" hint-placeholder-count="8"><li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{ic.d}}"/></svg><div><b>{{ic.name}}</b><span>{{ic.desc}}</span></div></li></sc-for>
+</ul>
 </div>
 </section>
 
 <!-- SPACES -->
 <section class="sec sp {{nightCls}}" id="spaces">
 <div class="wrap">
-<div class="rv">
-<div class="eyebrow track">{{t.spEyebrow}}</div>
-<h2 class="h2 serif">{{t.spTitle}}</h2>
-<p class="lead">{{t.spSub}}</p>
+<div class="sp-head">
+<div><h2 class="h2">{{t.spTitle}}</h2><p class="lead">{{t.spSub}}</p></div>
+<button class="sw" role="switch" aria-checked="{{nightStr}}" aria-label="{{t.toggleAria}}" onClick="{{flipNight}}"><span class="sw-t">{{t.dayShort}}</span><span class="sw-k"><i></i></span><span class="sw-t">{{t.nightShort}}</span></button>
 </div>
-
-<div style="display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center;margin-top:44px" class="rv">
 <div class="tabs" role="tablist">
-<i style="width: {{spTabW}}; inset-inline-start: {{spTabX}}"></i>
 <sc-for list="{{spaceTabs}}" as="st" hint-placeholder-count="3"><button role="tab" class="{{st.cls}}" aria-selected="{{st.sel}}" onClick="{{st.pick}}">{{st.name}}</button></sc-for>
+<i style="inset-inline-start: {{spTabX}}; width: {{spTabW}}"></i>
 </div>
-<div class="toggle">
-<span class="moment track" style="letter-spacing:.14em;text-transform:uppercase">{{t.toggleHint}}</span>
-<button class="sw" role="switch" aria-checked="{{nightStr}}" aria-label="{{t.toggleAria}}" onClick="{{flipNight}}">
-<span style="inset-inline-start:16px;opacity:{{sunOp}}">{{t.dayShort}}</span>
-<span style="inset-inline-end:14px;opacity:{{moonOp}}">{{t.nightShort}}</span>
-<i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{modeIcon}}"/></svg></i>
-</button>
-</div>
-</div>
-
 <div class="sp-grid">
-<div class="px">
 <div class="scene">
 <!-- Ceremony Garden: arch aisle (photos) -->
 <div class="lay" style="opacity: {{p0d}}"><img class="ph" src="images/ig/DegYOETm8iv.jpg" alt="{{t.alt0d}}" style="object-position:50% 58%" loading="lazy"></div>
@@ -456,92 +477,68 @@ html{scroll-behavior:smooth}body{margin:0}
 </svg>
 </div>
 </div>
-<div style="display:flex;gap:12px;align-items:center;margin-top:16px;font-size:13px;opacity:.75">
-<span style="width:8px;height:8px;border-radius:50%;background:var(--gold)"></span>{{sceneNoteTxt}}
-</div>
-</div>
 
-<div>
-<div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;opacity:.75" class="track">{{modeLabel}}</div>
-<h3 class="serif" style="font-size:clamp(34px,4vw,52px);line-height:1.08;font-weight:300;margin:10px 0 0">{{curSpace.name}}</h3>
-<p style="font-size:17px;opacity:.85;margin:16px 0 0;min-height:112px">{{curSpace.desc}}</p>
-<div class="specs">
-<div><small>{{t.spSeated}}</small><b class="serif">{{curSpace.cap}}</b></div>
-<div><small>{{t.spArea}}</small><b class="serif">{{curSpace.area}}</b></div>
-<div><small>{{t.spMode}}</small><b class="serif" style="font-size:24px;padding-top:12px">{{modeShort}}</b></div>
-</div>
-<div class="eyebrow track" style="margin-top:28px">{{t.spInc}}</div>
+<div class="sp-info">
+<h3 class="h3">{{curSpace.name}}</h3>
+<p>{{curSpace.desc}}</p>
 <ul class="amen">
 <sc-for list="{{curSpace.amen}}" as="a" hint-placeholder-count="4"><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{a.d}}"/></svg>{{a.label}}</li></sc-for>
 </ul>
-<a href="#tour" class="btn btn-o" style="margin-top:30px">{{t.spCta}}</a>
+<a href="#visit" class="btn btn-line">{{t.spCta}}</a>
 </div>
 </div>
 </div>
 </section>
 
 <!-- PACKAGES -->
-<section class="sec" id="packages" style="background:var(--sand)">
+<section class="sec" id="packages">
 <div class="wrap">
-<div class="rv">
-<div class="eyebrow track">{{t.pkEyebrow}}</div>
-<h2 class="h2 serif">{{t.pkTitle}}</h2>
+<h2 class="h2">{{t.pkTitle}}</h2>
 <p class="lead">{{t.pkSub}}</p>
-</div>
-
 <div class="tiers">
 <sc-for list="{{tierCards}}" as="c" hint-placeholder-count="3">
-<div class="tier rv {{c.cls}}">
-<sc-if value="{{c.best}}" hint-placeholder-val="{{false}}"><span class="badge track">{{t.pkBest}}</span></sc-if>
-<div class="serif" style="font-size:32px;font-weight:400">{{c.name}}</div>
-<div style="margin-top:20px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap"><span class="price serif">{{c.price}}</span><span style="font-size:13px;opacity:.75">{{t.egp}} · {{t.perGuest}}</span></div>
-<span class="minp"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8"/></svg>{{c.min}}</span>
-<ul class="tlist">
-<sc-for list="{{c.features}}" as="f" hint-placeholder-count="4"><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>{{f}}</span></li></sc-for>
-</ul>
-<button class="btn {{c.btn}}" onClick="{{c.pick}}">{{c.btnLabel}}</button>
+<div class="tier {{c.cls}}">
+<h3 class="h3">{{c.name}}</h3>
+<p class="price"><b>{{c.price}}</b>{{t.egp}} {{t.perGuest}}</p>
+<p class="min">{{c.min}}</p>
+<ul><sc-for list="{{c.features}}" as="f" hint-placeholder-count="4"><li>{{f}}</li></sc-for></ul>
+<button class="btn {{c.btn}}" aria-pressed="{{c.p}}" onClick="{{c.pick}}">{{c.btnLabel}}</button>
 </div>
 </sc-for>
 </div>
-<p style="font-size:13px;opacity:.7;margin:20px 0 0">{{t.pkNote}}</p>
+<p class="note">{{t.pkNote}}</p>
 
-<!-- SIMULATOR -->
 <div class="sim" id="budget">
-<div class="panel rv">
-<div class="eyebrow track">{{t.simEyebrow}}</div>
-<h3 class="serif" style="font-size:clamp(32px,3.6vw,44px);font-weight:300;line-height:1.1;margin:10px 0 28px">{{t.simTitle}}</h3>
-
+<div>
+<h3 class="h3">{{t.simTitle}}</h3>
+<p class="lead" style="margin-top:8px">{{t.simSub}}</p>
 <div class="ctl">
-<label for="g"><span>{{t.simGuests}}</span><span class="bignum serif">{{guestsFmt}}</span></label>
+<label class="lbl" for="g"><span>{{t.simGuests}}</span><span class="bignum">{{guestsFmt}}</span></label>
 <input id="g" class="range" type="range" min="100" max="700" step="10" value="{{guests}}" onChange="{{onGuests}}" style="--p: {{guestPct}}">
-<div style="display:flex;justify-content:space-between;font-size:12px;opacity:.65"><span>{{minLabel}}</span><span>{{maxLabel}}</span></div>
+<div class="minmax"><span>{{minLabel}}</span><span>{{maxLabel}}</span></div>
 </div>
-
 <div class="ctl">
 <div class="lbl"><span>{{t.simOcc}}</span></div>
-<div class="seg s3" role="group">
-<i style="width: calc(33.333% - 8px); inset-inline-start: {{occX}}"></i>
+<div class="seg" role="group" aria-label="{{t.simOcc}}">
+<i style="width: calc(33.333% - 2px); inset-inline-start: calc({{occX}} + 3px)"></i>
 <sc-for list="{{occBtns}}" as="ob" hint-placeholder-count="3"><button class="{{ob.cls}}" aria-pressed="{{ob.p}}" onClick="{{ob.pick}}">{{ob.name}}</button></sc-for>
 </div>
 </div>
-
 <div class="ctl">
 <div class="lbl"><span>{{t.simDay}}</span></div>
-<div class="seg" role="group">
-<i style="width: calc(50% - 8px); inset-inline-start: {{dayX}}"></i>
+<div class="seg" role="group" aria-label="{{t.simDay}}">
+<i style="width: calc(50% - 3px); inset-inline-start: calc({{dayX}} + 3px)"></i>
 <button class="{{peakOn}}" aria-pressed="{{peakP}}" onClick="{{setPeak}}">{{t.dayPeak}}</button>
 <button class="{{midOn}}" aria-pressed="{{midP}}" onClick="{{setMid}}">{{t.dayMid}}</button>
 </div>
 </div>
-
 <div class="ctl">
 <div class="lbl"><span>{{t.simTier}}</span></div>
-<div class="seg" role="group">
-<i style="width: calc(33.333% - 8px); inset-inline-start: {{tierX}}"></i>
+<div class="seg" role="group" aria-label="{{t.simTier}}">
+<i style="width: calc(33.333% - 2px); inset-inline-start: calc({{tierX}} + 3px)"></i>
 <sc-for list="{{tierBtns}}" as="tb" hint-placeholder-count="3"><button class="{{tb.cls}}" aria-pressed="{{tb.p}}" onClick="{{tb.pick}}">{{tb.name}}</button></sc-for>
 </div>
 </div>
-
 <div class="ctl">
 <div class="lbl"><span>{{t.simAdds}}</span></div>
 <div class="adds">
@@ -556,139 +553,99 @@ html{scroll-behavior:smooth}body{margin:0}
 </div>
 </div>
 
-<div class="rcpt rv">
-<div class="eyebrow track" style="color:var(--goldl)">{{t.rcTitle}}</div>
-<div style="margin-top:18px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.7" class="track">{{t.rcTotal}}</div>
-<div class="total serif" aria-live="polite"><span style="font-size:.4em;letter-spacing:.1em;margin-inline-end:10px">{{t.egp}}</span>{{display}}</div>
-<div style="font-size:14px;opacity:.8;margin-top:6px">≈ {{t.egp}} {{perHeadFmt}} {{t.perGuest}}</div>
+<div class="rcpt">
+<div class="lbl"><span>{{t.rcTotal}}</span></div>
+<div class="total" aria-live="polite"><small>{{t.egp}}</small>{{display}}</div>
+<div style="font-size:var(--t-s);color:#b9cabe;margin-top:4px">{{t.about}} {{t.egp}} {{perHeadFmt}} {{t.perGuest}}</div>
 <hr>
-<div class="line"><span>{{tierName}} · {{occName}} · {{billedFmt}} {{t.guestsWord}}</span><span>{{baseFmt}}</span></div>
+<div class="line"><span>{{tierName}}, {{occName}}, {{billedFmt}} {{t.guestsWord}}</span><span>{{baseFmt}}</span></div>
 <sc-if value="{{both}}" hint-placeholder-val="{{false}}"><div class="line"><span>{{t.rcKetab}}</span><span>{{ketabFmt}}</span></div></sc-if>
-<sc-if value="{{peakSel}}" hint-placeholder-val="{{true}}"><div class="line" style="color:var(--goldl)"><span>{{t.rcPeak}}</span><span>{{t.rcIncl}}</span></div></sc-if>
+<sc-if value="{{peakSel}}" hint-placeholder-val="{{true}}"><div class="line" style="color:var(--lantern)"><span>{{t.rcPeak}}</span><span>{{t.rcIncl}}</span></div></sc-if>
 <sc-if value="{{zaffa}}" hint-placeholder-val="{{false}}"><div class="line"><span>{{t.add1}}</span><span>{{zaffaFmt}}</span></div></sc-if>
 <sc-if value="{{carving}}" hint-placeholder-val="{{false}}"><div class="line"><span>{{t.add2}}</span><span>{{carvingFmt}}</span></div></sc-if>
 <sc-if value="{{villa}}" hint-placeholder-val="{{false}}"><div class="line"><span>{{t.add3}}</span><span>{{villaFmt}}</span></div></sc-if>
 <hr>
-<sc-if value="{{underMin}}" hint-placeholder-val="{{false}}"><div style="font-size:13px;opacity:.8;margin-bottom:8px">{{t.rcMin}}</div></sc-if>
-<sc-if value="{{overCap}}" hint-placeholder-val="{{false}}"><div style="font-size:13px;color:var(--goldl);margin-bottom:8px">{{t.rcOver}}</div></sc-if>
-<div style="font-size:12.5px;opacity:.65;margin-bottom:22px">{{t.rcVat}}</div>
-<a class="btn btn-g" href="{{waUrl}}" target="_blank" rel="noopener" style="width:100%">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>{{t.rcWa}}</a>
+<sc-if value="{{underMin}}" hint-placeholder-val="{{false}}"><p class="fine">{{t.rcMin}}</p></sc-if>
+<sc-if value="{{overCap}}" hint-placeholder-val="{{false}}"><p class="fine" style="color:var(--lantern)">{{t.rcOver}}</p></sc-if>
+<p class="fine">{{t.rcVat}}</p>
+<a class="btn btn-amber" href="{{waUrl}}" target="_blank" rel="noopener">{{t.rcWa}}</a>
 </div>
 </div>
 </div>
 </section>
 
-<!-- CATERING -->
-<section class="sec dk" id="catering">
-<div class="wrap">
-<div class="rv">
-<div class="eyebrow track">{{t.caEyebrow}}</div>
-<h2 class="h2 serif">{{t.caTitle}}</h2>
+<!-- FOOD -->
+<section class="sec food" id="food">
+<div class="wrap food-in">
+<div>
+<h2 class="h2">{{t.caTitle}}</h2>
 <p class="lead">{{t.caSub}}</p>
+<div class="tabs" role="tablist">
+<sc-for list="{{menuTabs}}" as="m" hint-placeholder-count="3"><button role="tab" class="{{m.cls}}" aria-selected="{{m.sel}}" onClick="{{m.pick}}">{{m.name}}</button></sc-for>
+<i style="inset-inline-start: {{menuTabX}}; width: {{menuTabW}}"></i>
 </div>
-<div class="menu-grid">
-<div class="rv">
-<div class="tabs" role="tablist" style="color:#f4ede1">
-<i style="width: {{menuTabW}}; inset-inline-start: {{menuTabX}}; background:var(--goldl)"></i>
-<sc-for list="{{menuTabs}}" as="m" hint-placeholder-count="3"><button role="tab" class="{{m.cls}}" aria-selected="{{m.sel}}" style="{{m.style}}" onClick="{{m.pick}}">{{m.name}}</button></sc-for>
+<p class="menu-desc">{{curMenu.desc}}</p>
+<ul class="mlist"><sc-for list="{{curMenu.items}}" as="it" hint-placeholder-count="5"><li>{{it.t}}</li></sc-for></ul>
+<button class="btn btn-amber" onClick="{{openTaste}}">{{t.caCta}}</button>
 </div>
-<p style="font-size:17px;opacity:.82;margin:28px 0 0;min-height:56px">{{curMenu.desc}}</p>
-<ul class="mlist">
-<sc-for list="{{curMenu.items}}" as="it" hint-placeholder-count="5"><li><span>{{it.n}}</span>{{it.t}}</li></sc-for>
-</ul>
-<button class="btn btn-g" onClick="{{openTaste}}">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 3v7a2 2 0 0 0 2 2 2 2 0 0 0 2-2V3M6 3v18M18 3c-2 2-3 5-3 8h3v10"/></svg>{{t.caCta}}</button>
-</div>
-<div class="menu-vis px">
-<svg viewBox="0 0 600 624" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%;display:block" aria-hidden="true">
-<rect width="600" height="624" fill="#2a2420"/>
-<circle cx="300" cy="360" r="250" fill="url(#gGlow)" opacity=".5"/>
-<g fill="none" stroke="#D9BC82" stroke-width="1.2" opacity=".85"><circle cx="300" cy="360" r="210"/><circle cx="300" cy="360" r="160"/><circle cx="300" cy="360" r="110"/></g>
-<circle cx="300" cy="360" r="196" fill="#f4ecdc"/><circle cx="300" cy="360" r="150" fill="#e9dcc0"/>
-<g fill="#b3693f"><circle cx="250" cy="330" r="22"/><circle cx="330" cy="316" r="26"/><circle cx="296" cy="392" r="24"/></g>
-<g fill="#6b7048"><circle cx="352" cy="384" r="18"/><circle cx="238" cy="392" r="14"/><circle cx="300" cy="300" r="12"/></g>
-<g fill="#fff8e6"><circle cx="268" cy="364" r="9"/><circle cx="328" cy="352" r="8"/><circle cx="300" cy="426" r="8"/></g>
-<path d="M70 120 Q300 20 530 120" fill="none" stroke="#5a4a2c" stroke-width="1.5"/>
-<g fill="#ffe2a0"><circle class="tw" cx="130" cy="92" r="4"/><circle class="tw" cx="200" cy="64" r="4"/><circle class="tw" cx="300" cy="52" r="4"/><circle class="tw" cx="400" cy="64" r="4"/><circle class="tw" cx="470" cy="92" r="4"/></g>
-</svg>
-</div>
-</div>
+<figure class="arch food-arch" style="margin:0"><img class="ph" src="images/ig/DegZJdWG7vH.jpg" alt="{{t.altFood}}" style="object-position:50% 45%" loading="lazy"></figure>
 </div>
 </section>
 
 <!-- WEDDINGS -->
 <section class="sec" id="weddings">
 <div class="wrap">
-<div style="display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:end" class="rv">
-<div>
-<div class="eyebrow track">{{t.weEyebrow}}</div>
-<h2 class="h2 serif">{{t.weTitle}}</h2>
-</div>
-<div class="chips" role="group">
+<div class="we-head">
+<h2 class="h2">{{t.weTitle}}</h2>
+<div class="chips" role="group" aria-label="{{t.weFilter}}">
 <sc-for list="{{filters}}" as="f" hint-placeholder-count="4"><button class="chip {{f.cls}}" aria-pressed="{{f.p}}" onClick="{{f.pick}}">{{f.name}}</button></sc-for>
 </div>
 </div>
 <div class="look">
-<sc-for list="{{tiles}}" as="tl" hint-placeholder-count="6">
-<div class="tile serif" style="background: {{tl.bg}}; grid-column: {{tl.col}}; grid-row: {{tl.row}}">
-<img class="ph" src="{{tl.img}}" alt="{{tl.cap}}" style="object-position:{{tl.pos}}" loading="lazy">
-<p><small>{{tl.tag}}</small>{{tl.cap}}</p>
-</div>
+<sc-for list="{{tiles}}" as="tl" hint-placeholder-count="5">
+<figure class="tile" data-motion><img class="ph" src="{{tl.img}}" alt="{{tl.cap}}" style="object-position:{{tl.pos}}" loading="lazy"><figcaption>{{tl.cap}}</figcaption></figure>
 </sc-for>
 </div>
-<p style="font-size:12.5px;opacity:.65;margin:14px 0 0">{{t.weNote}}</p>
-
-<div class="quotes">
-<sc-for list="{{quotes}}" as="q" hint-placeholder-count="3">
-<figure class="quote rv" style="margin:0">
-<q class="serif">{{q.text}}</q>
-<figcaption style="margin-top:18px;font-size:14px"><b style="font-weight:600">{{q.who}}</b><span style="display:block;opacity:.65;font-size:13px">{{q.role}}</span></figcaption>
-</figure>
-</sc-for>
-</div>
+<p class="note">{{t.weNote}} <a href="https://www.instagram.com/the.garden.new.cairo" target="_blank" rel="noopener">@the.garden.new.cairo</a></p>
 </div>
 </section>
 
-<!-- TOUR -->
-<section class="sec" id="tour" style="background:var(--sand)">
-<div class="wrap tour">
-<div class="rv">
-<div class="eyebrow track">{{t.toEyebrow}}</div>
-<h2 class="h2 serif">{{t.toTitle}}</h2>
+<!-- VISIT -->
+<section class="sec visit" id="visit">
+<div class="wrap visit-in">
+<div>
+<h2 class="h2">{{t.toTitle}}</h2>
 <p class="lead">{{t.toSub}}</p>
-<ul class="amen" style="margin-top:32px">
-<li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8M5 10v10h14V10M10 20v-6h4v6"/></svg>{{t.toP1}}</li>
-<li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 3v7a2 2 0 0 0 2 2 2 2 0 0 0 2-2V3M6 3v18M18 3c-2 2-3 5-3 8h3v10"/></svg>{{t.toP2}}</li>
-<li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20zM12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/></svg>{{t.toP3}}</li>
+<ul>
+<li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg><span>{{t.addr}}</span></li>
+<li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg><a href="https://wa.me/c/201003863568" target="_blank" rel="noopener">{{t.catalog}}</a></li>
+<li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg><a href="tel:+201003863568" dir="ltr">0100 386 3568</a></li>
 </ul>
 </div>
-<div class="panel rv">
+<div class="panel">
 <sc-if value="{{tourSent}}" hint-placeholder-val="{{false}}">
-<div class="toast" role="status">
-<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3d6b2a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><path d="M20 6 9 17l-5-5"/></svg>
-<div><b style="font-weight:600">{{t.toDone}}</b><p style="margin:6px 0 0;font-size:14px">{{tourSummary}}</p></div>
+<div class="done" role="status">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2f6b3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><path d="M20 6 9 17l-5-5"/></svg>
+<div><b>{{t.toDone}}</b><p>{{tourSummary}}</p></div>
 </div>
 <a class="btn btn-wa" href="{{tourWa}}" target="_blank" rel="noopener" style="margin-top:16px;width:100%">{{t.toWa}}</a>
-<button class="btn btn-o" onClick="{{tourReset}}" style="margin-top:10px;width:100%">{{t.toAgain}}</button>
+<button class="btn btn-line" onClick="{{tourReset}}" style="margin-top:10px;width:100%">{{t.toAgain}}</button>
 </sc-if>
 <sc-if value="{{tourOpen}}" hint-placeholder-val="{{true}}">
-<div class="seg" role="group" style="margin-top:0">
-<i style="width: calc(50% - 8px); inset-inline-start: {{tourX}}"></i>
+<div class="seg" role="group" aria-label="{{t.toKind}}">
+<i style="width: calc(50% - 3px); inset-inline-start: calc({{tourX}} + 3px)"></i>
 <button class="{{tourInOn}}" aria-pressed="{{tourInP}}" onClick="{{setTourIn}}">{{t.toIn}}</button>
 <button class="{{tourVidOn}}" aria-pressed="{{tourVidP}}" onClick="{{setTourVid}}">{{t.toVid}}</button>
 </div>
-<p style="font-size:14px;opacity:.75;margin:14px 0 0;min-height:44px">{{tourDesc}}</p>
-<div class="stack" style="margin-top:12px">
-<label class="field track" style="color:#5a524a"><span>{{t.toDate}}</span><input class="inp inp-l" type="date" min="{{today}}" value="{{tourDate}}" onChange="{{onTourDate}}"></label>
-<div class="field track" style="color:#5a524a"><span>{{t.toTime}}</span>
-<div class="slots">
-<sc-for list="{{slots}}" as="sl" hint-placeholder-count="4"><button class="slot {{sl.cls}}" aria-pressed="{{sl.p}}" onClick="{{sl.pick}}" style="letter-spacing:0">{{sl.t}}</button></sc-for>
-</div></div>
-<label class="field track" style="color:#5a524a"><span>{{t.toName}}</span><input class="inp inp-l" type="text" value="{{tourName}}" onChange="{{onTourName}}" autocomplete="name"></label>
-<label class="field track" style="color:#5a524a"><span>{{t.toPhone}}</span><input class="inp inp-l" type="tel" dir="ltr" value="{{tourPhone}}" onChange="{{onTourPhone}}" autocomplete="tel"></label>
-<sc-if value="{{tourErr}}" hint-placeholder-val="{{false}}"><div style="font-size:13px;color:#9a3b1f">{{t.formErr}}</div></sc-if>
-<button class="btn btn-d" onClick="{{tourSubmit}}" style="width:100%">{{t.toBtn}}</button>
+<p class="desc">{{tourDesc}}</p>
+<div class="stack">
+<label class="fld"><span>{{t.toDate}}</span><input class="inp" type="date" min="{{today}}" value="{{tourDate}}" onChange="{{onTourDate}}"></label>
+<div class="fld"><span>{{t.toTime}}</span>
+<div class="slots"><sc-for list="{{slots}}" as="sl" hint-placeholder-count="4"><button class="slot {{sl.cls}}" aria-pressed="{{sl.p}}" onClick="{{sl.pick}}">{{sl.t}}</button></sc-for></div></div>
+<label class="fld"><span>{{t.toName}}</span><input class="inp" type="text" value="{{tourName}}" onChange="{{onTourName}}" autocomplete="name"></label>
+<label class="fld"><span>{{t.toPhone}}</span><input class="inp" type="tel" dir="ltr" value="{{tourPhone}}" onChange="{{onTourPhone}}" autocomplete="tel"></label>
+<sc-if value="{{tourErr}}" hint-placeholder-val="{{false}}"><p class="err" role="alert">{{t.formErr}}</p></sc-if>
+<button class="btn btn-v" onClick="{{tourSubmit}}" style="width:100%">{{t.toBtn}}</button>
 </div>
 </sc-if>
 </div>
@@ -696,58 +653,56 @@ html{scroll-behavior:smooth}body{margin:0}
 </section>
 
 <footer class="foot">
-<div class="wrap" style="display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between">
+<div class="wrap foot-in">
 <div>
-<div class="serif" style="font-size:34px;color:#f4ede1;font-weight:400">The Garden Venue</div>
-<div class="track" style="letter-spacing:.3em;text-transform:uppercase;font-size:11px;margin-top:4px">{{t.brandSub}}</div>
-<p style="max-width:340px;margin:20px 0 0">{{t.footTag}}</p>
+<p class="disp">The Garden Venue</p>
+<p>{{t.footTag}}</p>
+<p style="opacity:.7">#katbktab #engagementparties #weddingdecor</p>
 </div>
-<div style="display:grid;gap:8px;align-content:start">
-<div class="eyebrow track" style="color:var(--goldl)">{{t.footContact}}</div>
-<a href="https://www.instagram.com/the.garden.new.cairo" target="_blank" rel="noopener" style="padding:6px 0">Instagram · @the.garden.new.cairo · {{t.igCount}}</a>
-<a href="tel:+201003863568" dir="ltr" style="text-align:start;padding:6px 0">0100 386 3568</a>
-<a href="https://wa.me/201003863568" target="_blank" rel="noopener" style="padding:6px 0">WhatsApp</a>
-<span>{{t.footAddr}}</span>
+<div class="foot-c">
+<a href="https://www.instagram.com/the.garden.new.cairo" target="_blank" rel="noopener">Instagram: @the.garden.new.cairo</a>
+<a href="tel:+201003863568" dir="ltr" style="text-align:start">0100 386 3568</a>
+<a href="https://wa.me/201003863568" target="_blank" rel="noopener">WhatsApp</a>
+<a href="https://wa.me/c/201003863568" target="_blank" rel="noopener">{{t.catalog}}</a>
+<span>{{t.addr}}</span>
 </div>
 </div>
 </footer>
 
-<!-- WHATSAPP CONCIERGE -->
+<!-- WHATSAPP -->
 <div class="wa">
 <sc-if value="{{waOpen}}" hint-placeholder-val="{{false}}">
-<div class="wa-card" role="dialog" aria-label="WhatsApp">
-<header><b style="font-weight:600">{{t.waHead}}</b><button class="x" onClick="{{closeWa}}" aria-label="Close" style="width:36px;height:36px;border-color:rgba(255,255,255,.4);color:#fff"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></header>
-<div style="padding:14px 16px 0;font-size:12.5px;opacity:.7">{{t.waPre}}</div>
+<div class="wa-card" role="dialog" aria-label="WhatsApp" data-motion>
+<header><span>{{t.waHead}}</span><button class="x" onClick="{{closeWa}}" aria-label="{{t.close}}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></header>
+<p class="wa-pre">{{t.waPre}}</p>
 <div class="wa-msg">{{waMsg}}</div>
-<div style="padding:0 16px 16px"><a class="btn btn-wa" href="{{waUrl}}" target="_blank" rel="noopener" style="width:100%">{{t.waSend}}</a></div>
+<a class="btn btn-wa" href="{{waUrl}}" target="_blank" rel="noopener">{{t.waSend}}</a>
 </div>
 </sc-if>
-<button class="wa-pill" onClick="{{toggleWa}}" aria-expanded="{{waStr}}">
-<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>{{t.waPill}}</button>
+<button class="wa-btn" onClick="{{toggleWa}}" aria-expanded="{{waStr}}" aria-label="WhatsApp">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg><span>WhatsApp</span></button>
 </div>
 
 <!-- TASTING MODAL -->
 <sc-if value="{{tasteOpen}}" hint-placeholder-val="{{false}}">
-<div class="modal" onClick="{{closeTaste}}">
-<div class="dlg" role="dialog" aria-modal="true" aria-label="{{t.caCta}}" onClick="{{stop}}">
-<div style="display:flex;justify-content:space-between;align-items:start;gap:16px">
-<div><div class="eyebrow track">{{t.taEyebrow}}</div><h3 class="serif" style="font-size:38px;font-weight:300;line-height:1.1;margin:8px 0 0">{{t.caCta}}</h3></div>
-<button class="x" onClick="{{closeTaste}}" aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
-</div>
+<div class="modal" onClick="{{closeTaste}}" data-motion>
+<div class="dlg" role="dialog" aria-modal="true" aria-label="{{t.caCta}}" onClick="{{stop}}" data-motion>
+<div class="dlg-h"><h3 class="h3">{{t.caCta}}</h3>
+<button class="x" onClick="{{closeTaste}}" aria-label="{{t.close}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
 <sc-if value="{{tasteSent}}" hint-placeholder-val="{{false}}">
-<div class="toast" style="margin-top:24px" role="status"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3d6b2a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><path d="M20 6 9 17l-5-5"/></svg><div><b style="font-weight:600">{{t.taDone}}</b><p style="margin:6px 0 0;font-size:14px">{{tasteSummary}}</p></div></div>
+<div class="done" style="margin-top:22px" role="status"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2f6b3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><path d="M20 6 9 17l-5-5"/></svg><div><b>{{t.taDone}}</b><p>{{tasteSummary}}</p></div></div>
 <a class="btn btn-wa" href="{{tasteWa}}" target="_blank" rel="noopener" style="margin-top:16px;width:100%">{{t.toWa}}</a>
 </sc-if>
 <sc-if value="{{tasteForm}}" hint-placeholder-val="{{true}}">
-<p style="opacity:.75;font-size:15px;margin:14px 0 0">{{t.taSub}}</p>
-<div class="stack" style="margin-top:20px">
-<label class="field track" style="color:#5a524a"><span>{{t.toName}}</span><input class="inp inp-l" type="text" value="{{tasteName}}" onChange="{{onTasteName}}" autocomplete="name"></label>
-<label class="field track" style="color:#5a524a"><span>{{t.toPhone}}</span><input class="inp inp-l" type="tel" dir="ltr" value="{{tastePhone}}" onChange="{{onTastePhone}}" autocomplete="tel"></label>
-<label class="field track" style="color:#5a524a"><span>{{t.taMenu}}</span>
-<select class="inp inp-l" value="{{tasteMenu}}" onChange="{{onTasteMenu}}"><option value="0">{{t.m0}}</option><option value="1">{{t.m1}}</option><option value="2">{{t.m2}}</option></select></label>
-<label class="field track" style="color:#5a524a"><span>{{t.toDate}}</span><input class="inp inp-l" type="date" min="{{today}}" value="{{tasteDate}}" onChange="{{onTasteDate}}"></label>
-<sc-if value="{{tasteErr}}" hint-placeholder-val="{{false}}"><div style="font-size:13px;color:#9a3b1f">{{t.formErr}}</div></sc-if>
-<button class="btn btn-d" onClick="{{tasteSubmit}}" style="width:100%">{{t.taBtn}}</button>
+<p class="desc">{{t.taSub}}</p>
+<div class="stack">
+<label class="fld"><span>{{t.toName}}</span><input class="inp" type="text" value="{{tasteName}}" onChange="{{onTasteName}}" autocomplete="name"></label>
+<label class="fld"><span>{{t.toPhone}}</span><input class="inp" type="tel" dir="ltr" value="{{tastePhone}}" onChange="{{onTastePhone}}" autocomplete="tel"></label>
+<label class="fld"><span>{{t.taMenu}}</span>
+<select class="inp" value="{{tasteMenu}}" onChange="{{onTasteMenu}}"><option value="0">{{t.m0}}</option><option value="1">{{t.m1}}</option><option value="2">{{t.m2}}</option></select></label>
+<label class="fld"><span>{{t.toDate}}</span><input class="inp" type="date" min="{{today}}" value="{{tasteDate}}" onChange="{{onTasteDate}}"></label>
+<sc-if value="{{tasteErr}}" hint-placeholder-val="{{false}}"><p class="err" role="alert">{{t.formErr}}</p></sc-if>
+<button class="btn btn-v" onClick="{{tasteSubmit}}" style="width:100%">{{t.taBtn}}</button>
 </div>
 </sc-if>
 </div>
@@ -756,6 +711,7 @@ html{scroll-behavior:smooth}body{margin:0}
 
 </div>
 </template>
+
 <script>
 /* Tiny template runtime: {{holes}}, <sc-if>, <sc-for>, on* handlers, DOM morphing. */
 class DCLogic {
@@ -842,7 +798,7 @@ class DCLogic {
     if (o.nodeType !== n.nodeType || o.nodeName !== n.nodeName) { parent.replaceChild(n, o); return; }
     if (n.nodeType === 3) { if (o.data !== n.data) o.data = n.data; return; }
     for (const a of Array.from(n.attributes)) if (o.getAttribute(a.name) !== a.value) o.setAttribute(a.name, a.value);
-    for (const a of Array.from(o.attributes)) if (!n.hasAttribute(a.name)) o.removeAttribute(a.name);
+    for (const a of Array.from(o.attributes)) if (!n.hasAttribute(a.name) && !(a.name === 'style' && o.hasAttribute('data-motion'))) o.removeAttribute(a.name);
     o.__h = n.__h; bind(o);
     morphChildren(o, Array.from(n.childNodes));
     const tag = o.localName;
@@ -882,14 +838,37 @@ class Component extends DCLogic {
     };
     this._total = 0; this._tweenTo = null; this._raf = 0;
   }
-  componentDidMount() { this._tweenTo = this._total; this.syncLang(); }
+  componentDidMount() { this._tweenTo = this._total; this.syncLang(); this.intro(); this._seen = { filter: this.state.filter, taste: false, wa: false }; }
+  // One orchestrated load moment: the velvet drapes part over the hero arch.
+  intro() {
+    const M = window.Motion;
+    if (!M || !document.documentElement.classList.contains('mo')) return;
+    const out = [0.65, 0, 0.35, 1], soft = [0.22, 1, 0.36, 1];
+    M.animate('.hero .drape.l', { x: ['0%', '-101%'] }, { duration: 1.6, delay: 0.4, ease: out });
+    M.animate('.hero .drape.r', { x: ['0%', '101%'] }, { duration: 1.6, delay: 0.4, ease: out });
+    M.animate('.hero .arch-ph .ph', { scale: [1.16, 1] }, { duration: 2.6, delay: 0.4, ease: soft });
+    M.animate('.hero .ln > span', { y: ['106%', '0%'] }, { duration: 1.1, delay: M.stagger(0.1, { startDelay: 0.7 }), ease: soft });
+    M.animate('.hero [data-fade]', { opacity: [0, 1], y: [12, 0] }, { duration: 0.9, delay: M.stagger(0.08, { startDelay: 1.05 }), ease: soft });
+    const hero = document.querySelector('.hero');
+    if (M.scroll && hero) M.scroll(M.animate('.hero .arch-ph', { y: [0, 70] }, { ease: 'linear' }), { target: hero, offset: ['start start', 'end start'] });
+  }
+  // Motion that answers a person's action: dialogs open with a spring, filtered photos settle in.
+  react() {
+    const M = window.Motion, s = this.state, seen = this._seen;
+    if (!seen) return;
+    const ok = M && document.documentElement.classList.contains('mo');
+    if (ok && s.tasteOpen && !seen.taste) { M.animate('.modal', { opacity: [0, 1] }, { duration: 0.25 }); M.animate('.dlg', { opacity: [0, 1], scale: [0.96, 1], y: [16, 0] }, { type: 'spring', stiffness: 380, damping: 30 }); }
+    if (ok && s.waOpen && !seen.wa) M.animate('.wa-card', { opacity: [0, 1], scale: [0.94, 1], y: [12, 0] }, { type: 'spring', stiffness: 420, damping: 30 });
+    if (ok && s.filter !== seen.filter) M.animate('.look .tile', { opacity: [0, 1], scale: [0.97, 1] }, { type: 'spring', stiffness: 300, damping: 28, delay: M.stagger(0.05) });
+    this._seen = { filter: s.filter, taste: s.tasteOpen, wa: s.waOpen };
+  }
   syncLang() {
     const l = this.state.lang;
     document.documentElement.dir = l === 'ar' ? 'rtl' : 'ltr';
     document.title = l === 'ar' ? 'ذا جاردن ڤينيو | أفراح خارجية فاخرة في القاهرة الجديدة' : 'The Garden Venue | Luxury Outdoor Weddings in New Cairo';
     if (this._lang !== l) { this._lang = l; try { localStorage.setItem('tg-lang', l); } catch (e) {} }
   }
-  componentDidUpdate() { this.syncLang(); if (this._total !== this._tweenTo) this.tweenTo(this._total); }
+  componentDidUpdate() { this.syncLang(); this.react(); if (this._total !== this._tweenTo) this.tweenTo(this._total); }
   componentWillUnmount() { if (this._raf) cancelAnimationFrame(this._raf); }
   tweenTo(t) {
     this._tweenTo = t;
@@ -950,80 +929,78 @@ class Component extends DCLogic {
 
     // ---------- copy ----------
     const t = {
-      brandSub: L('Venue · New Cairo', 'ڤينيو · القاهرة الجديدة'), nMoments: L('The day', 'اليوم'),
-      nSpaces: L('Spaces', 'المساحات'), nPackages: L('Packages', 'الباقات'), nCatering: L('Catering', 'الضيافة'),
-      nWeddings: L('Weddings', 'الأفراح'), nVisit: L('Visit', 'الزيارة'),
-      navCta: L('Check Date Availability', 'تحقق من توفر التاريخ'), navCtaShort: L('Check Date', 'المواعيد'),
-      scroll: L('Scroll', 'مرّر'),
-      eyebrow: L('Luxury outdoor weddings & events · New Cairo', 'أفراح ومناسبات خارجية فاخرة · القاهرة الجديدة'),
-      h1a: L('A garden', 'حديقة'), h1b: L('made for your', 'صُنعت لحكايتكما'), h1c: L('forever.', 'للأبد.'),
-      sub: L('Katb Ketab at sunset, Zaffa under a thousand lights. A fully customizable setup designed to match your vision, one all-inclusive price per guest, and every detail handled.', 'كتب الكتاب وقت الغروب، والزفة تحت آلاف الأضواء. تجهيزات قابلة للتخصيص بالكامل على ذوقكم، وسعر شامل واحد للفرد، وكل التفاصيل علينا.'),
-      ckTitle: L('Check your date', 'تحقق من تاريخ فرحكما'), ckDate: L('Wedding date', 'تاريخ الفرح'), ckGuests: L('Guests', 'عدد المدعوين'),
-      ckBtn: L('Check availability', 'تحقق من التوفر'),
-      next: L('Next open date', 'أقرب تاريخ متاح'),
-      ckNote: L('Indicative only. Our concierge confirms on WhatsApp.', 'النتيجة استرشادية، ويؤكدها فريقنا على واتساب.'),
-      ckWa: L('Continue on WhatsApp', 'أكملا على واتساب'),
-      f1l: L('Location', 'الموقع'), f1v: L('New Cairo', 'القاهرة الجديدة'),
-      f2l: L('Setups', 'التجهيزات'), f2v: L('Fully customizable', 'قابلة للتخصيص بالكامل'),
-      f3l: L('Pricing', 'الأسعار'), f3v: L('All-inclusive, per guest', 'شاملة · بسعر الفرد'),
-      f4l: L('Minimum guarantee', 'الحد الأدنى المضمون'), f4v: L('From 150 guests', 'من ١٥٠ مدعو'),
-      igCount: L('36K followers', '٣٦ ألف متابع'),
-      moEyebrow: L('One day, two moments', 'يوم واحد ولحظتين'), moTitle: L('From Katb Ketab to the Zaffa', 'من كتب الكتاب للزفة'),
-      moSub: L('Most Egyptian weddings are two events in one day. We set the garden for each, then turn it over while your family rests in the villa.', 'معظم الأفراح المصرية مناسبتين في يوم واحد. نجهز الحديقة لكل واحدة، ونقلب التجهيز والعيلة مرتاحة في الفيلا.'),
-      moDayWhen: L('Daytime · sunset', 'نهارًا · وقت الغروب'), moDayTitle: L('Katb Ketab ceremony', 'كتب الكتاب'),
-      moDaySub: L('An open-air ceremony on the lawn at golden hour, with the Ma’zoun table, family seating and the light every photographer asks for.', 'عقد قران في الحديقة المفتوحة في الساعة الذهبية، بترابيزة المأذون وجلسة العيلة والإضاءة اللي كل مصور بيدور عليها.'),
-      moEveWhen: L('Evening · reception', 'مساءً · الحفل'), moEveTitle: L('Reception & Zaffa', 'الفرح والزفة'),
-      moEveSub: L('Evening lighting, the Zaffa entrance down the aisle, the couple on the Kosha, and dinner served hot until the last guest.', 'إضاءة السهرة، ودخول الزفة في الممر، والعروسين على الكوشة، والعشا سخن لحد آخر ضيف.'),
-      incEyebrow: L('Included in every package', 'مشمول في كل الباقات'),
-      spEyebrow: L('The spaces', 'المساحات'), spTitle: L('One garden, two moods', 'حديقة واحدة بوجهين'),
-      spSub: L('Slide from golden hour to midnight and watch the venue change with the evening.', 'انتقلا من الساعة الذهبية إلى منتصف الليل وشاهدا المكان يتغير مع المساء.'),
-      toggleHint: L('Time of day', 'وقت اليوم'), toggleAria: L('Switch between golden hour and midnight gala', 'التبديل بين الساعة الذهبية وسهرة منتصف الليل'),
-      dayShort: L('DAY', 'نهار'), nightShort: L('NIGHT', 'ليل'),
-      sceneNote: '', heroAlt: L('Arched Kosha stage lit at dusk among palm trees at The Garden Venue', 'مسرح الكوشة بالأقواس مضاء وقت الغروب بين النخيل في ذا جاردن'),
-      alt0d: L('Aisle of white arches with red velvet drapes on the lawn by day', 'ممر أقواس بيضاء بستائر قطيفة حمراء في الحديقة نهارًا'),
-      alt0n: L('The arch aisle glowing at night under palm trees', 'ممر الأقواس مضاء ليلًا تحت النخيل'),
-      alt1d: L('Round tables with red roses on the main lawn at sunset', 'ترابيزات دائرية بورد أحمر في الحديقة الرئيسية وقت الغروب'),
-      alt1n: L('The Kosha stage lit in amber with a monogrammed dance floor', 'مسرح الكوشة بإضاءة كهرمانية وأرضية رقص بحروف العروسين'),
-      altDay: L('Golden-hour arches on the lawn', 'أقواس الحديقة في الساعة الذهبية'),
-      altEve: L('Couple dancing between cold-spark fountains', 'العروسان يرقصان بين الشرارات الباردة'),
-      spSeated: L('Capacity', 'السعة'), spArea: L('Area', 'المساحة'), spMode: L('Moment', 'اللحظة'),
-      spInc: L('Included', 'يشمل'), spCta: L('Book a private tour', 'احجزا زيارة خاصة'),
-      pkEyebrow: L('Packages', 'الباقات'), pkTitle: L('All-inclusive, priced per guest', 'باقات شاملة بسعر الفرد'),
-      pkSub: L('Catering, Kosha, sound and lighting, valet and the bridal villa in one number per guest, with a minimum guest guarantee per package. No surprises in wedding week.', 'الضيافة والكوشة والصوت والإضاءة والفاليه وفيلا العروس في رقم واحد للفرد، مع حد أدنى مضمون للمدعوين لكل باقة. بلا مفاجآت في أسبوع الفرح.'),
-      pkBest: L('Most chosen', 'الأكثر اختيارًا'), egp: L('EGP', 'ج.م'), perGuest: L('per guest', 'للفرد'),
-      pkNote: L('Illustrative reception rates for the day selected in the simulator below (Thu / Fri ≈ +18%). Your final quote follows the menu tasting.', 'أسعار استرشادية للفرح حسب اليوم المختار في الحاسبة تحت (الخميس والجمعة ≈ +١٨٪). العرض النهائي بعد جلسة التذوق.'),
-      simOcc: L('Occasion', 'المناسبة'), occKetab: L('Katb Ketab', 'كتب كتاب'), occRec: L('Reception', 'فرح'), occBoth: L('Both', 'الاتنين'),
-      rcKetab: L('Katb Ketab ceremony setup', 'تجهيز كتب الكتاب'),
-      simEyebrow: L('Budget simulator', 'حاسبة الميزانية'), simTitle: L('Build your wedding budget', 'احسبا ميزانية فرحكما'),
-      simGuests: L('Guest count', 'عدد المدعوين'), simDay: L('Day of the week', 'يوم الفرح'),
-      dayPeak: L('Thu / Fri · peak', 'الخميس / الجمعة · ذروة'), dayMid: L('Mid-week', 'وسط الأسبوع'),
-      simTier: L('Package', 'الباقة'), simAdds: L('Egyptian add-ons', 'إضافات مصرية'),
-      add1: L('Zaffa & cold sparks', 'زفة وشرارات باردة'), add2: L('Live carving stations', 'محطات تقطيع حي'), add3: L('Extra villa day-use', 'يوم إضافي بالفيلا'),
-      rcTitle: L('Your estimate', 'تقديركما'), rcTotal: L('Estimated total', 'الإجمالي التقديري'),
-      guestsWord: L('guests', 'مدعو'), rcPeak: L('Thu / Fri peak rate', 'سعر ذروة الخميس / الجمعة'), rcIncl: L('included', 'مشمول'),
-      rcMin: '', rcOver: L('Above 600 guests we open the second lawn. Ask the concierge.', 'فوق ٦٠٠ مدعو بنفتح الحديقة التانية. اسألوا فريق الاستقبال.'),
-      rcVat: L('Before 14% VAT and service.', 'قبل ضريبة القيمة المضافة ١٤٪ والخدمة.'),
-      rcWa: L('Send this estimate on WhatsApp', 'أرسلا هذا التقدير على واتساب'),
-      caEyebrow: L('Hospitality', 'الضيافة'), caTitle: L('A table your parents will talk about', 'مائدة سيتحدث عنها الأهل'),
-      caSub: L('Generous, hot, and on time. Choose how your guests eat and we build the evening around it.', 'كرم وسخونة وفي الموعد. اختارا طريقة ضيافة المدعوين ونبني السهرة حولها.'),
-      caCta: L('Book a Menu Tasting', 'احجزا جلسة تذوق'),
-      m0: L('Open Buffet', 'البوفيه المفتوح'), m1: L('Live Stations', 'المحطات الحية'), m2: L('Signature Desserts', 'حلوياتنا المميزة'),
-      taEyebrow: L('Menu tasting', 'تذوق القائمة'), taSub: L('Tell us which menu to start with and a rough date. We will confirm the slot.', 'أخبرانا بالقائمة التي تودان البدء بها وتاريخ تقريبي، ونؤكد الموعد.'),
-      taMenu: L('Menu to taste', 'القائمة'), taBtn: L('Request tasting', 'اطلبا التذوق'), taDone: L('Tasting request received', 'تم استلام طلب التذوق'),
-      formErr: L('Please add your name and phone number.', 'من فضلكما أضيفا الاسم ورقم الهاتف.'),
-      weEyebrow: L('Real weddings', 'أفراح حقيقية'), weTitle: L('The lookbook', 'ألبوم الأفراح'),
-      weNote: L('Photos from @the.garden.new.cairo on Instagram. Quotes are samples until real reviews are added.', 'الصور من حساب @the.garden.new.cairo على إنستجرام. الآراء تجريبية لحين إضافة آراء حقيقية.'),
-      toEyebrow: L('Visit', 'زيارة'), toTitle: L('See it before you decide', 'شاهدا المكان قبل القرار'),
-      toSub: L('Walk the garden at the hour you would marry, or join a live video walkthrough from anywhere in the world.', 'تجولا في الحديقة في الساعة التي تحلمان بها، أو انضما إلى جولة فيديو مباشرة من أي مكان في العالم.'),
-      toP1: L('45 minutes with a wedding planner', '٤٥ دقيقة مع منسق أفراح'), toP2: L('Sample plates on request', 'عينات من الطعام عند الطلب'), toP3: L('Video walkthrough for couples abroad', 'جولة فيديو للعرسان في الخارج'),
-      toIn: L('In-person tour', 'زيارة شخصية'), toVid: L('Video walkthrough', 'جولة فيديو'),
-      toDate: L('Preferred date', 'التاريخ المفضل'), toTime: L('Time', 'الوقت'), toName: L('Your name', 'الاسم'), toPhone: L('Phone / WhatsApp', 'الهاتف / واتساب'),
-      toBtn: L('Request this visit', 'اطلبا هذه الزيارة'), toDone: L('Visit request received', 'تم استلام طلب الزيارة'),
-      toWa: L('Confirm instantly on WhatsApp', 'أكدا فورًا على واتساب'), toAgain: L('Book another', 'حجز آخر'),
-      footTag: L('Luxury outdoor weddings & events in New Cairo. Fully customizable setups, designed to match your vision.', 'أفراح ومناسبات خارجية فاخرة في القاهرة الجديدة. تجهيزات قابلة للتخصيص بالكامل، مصممة على ذوقكم.'),
-      footContact: L('Contact', 'تواصل'), footAddr: L('New Cairo, Cairo', 'القاهرة الجديدة، القاهرة'),
-      waPill: L('Concierge', 'خدمة الاستقبال'), waHead: L('The Garden Venue concierge', 'استقبال ذا جاردن'),
-      waPre: L('This message will be sent with your choices:', 'ستُرسل هذه الرسالة مع اختياراتكما:'), waSend: L('Open WhatsApp', 'افتحا واتساب')
+      navAria: L('Sections', 'الأقسام'),
+      nDay: L('Katb Ketab & weddings', 'كتب كتاب وأفراح'), nSpaces: L('The venue', 'المكان'), nPackages: L('Packages', 'الباقات'),
+      nFood: L('Catering', 'الأكل'), nWeddings: L('Decor', 'الديكور'), nVisit: L('Location', 'الموقع'),
+      navCta: L('Check your date', 'اعرف التاريخ متاح ولا لأ'),
+      // Instagram bio, line by line
+      bioName: L('The Garden Venue | New Cairo', 'ذا جاردن ڤينيو | القاهرة الجديدة'),
+      h1a: L('Luxury Outdoor', 'أفراح ومناسبات'), h1b: L('Weddings & Events', 'خارجية فاخرة'),
+      bio1: L('Fully customizable setups', 'تجهيزات قابلة للتخصيص بالكامل'), bio2: L('Designed to match your vision', 'مصممة على ذوقك'),
+      bioLoc: L('New Cairo', 'القاهرة الجديدة'),
+      heroWa: L('Message us on WhatsApp', 'كلمنا واتساب'), heroPk: L('See packages', 'شوف الباقات'),
+      heroAlt: L('The arched stage at The Garden Venue lit at dusk between palm trees', 'المسرح بالأقواس في ذا جاردن مضاء وقت المغرب بين النخل'),
+      // date check
+      ckTitle: L('Check your date', 'اعرف التاريخ متاح ولا لأ'), ckDate: L('Wedding date', 'تاريخ الفرح'), ckGuests: L('Guests', 'عدد المعازيم'),
+      fewer: L('10 fewer guests', 'أقل ١٠'), more: L('10 more guests', 'أكتر ١٠'),
+      ckBtn: L('Check', 'اعرف'), next: L('Next open date', 'أقرب يوم فاضي'),
+      ckNote: L('We confirm every date on WhatsApp.', 'بنأكد كل التواريخ على الواتساب.'), ckWa: L('Confirm on WhatsApp', 'أكد على الواتساب'),
+      // their photo text + caption
+      moTitle: L('We don’t just host events; we orchestrate masterpieces', 'إحنا مش بس بنستضيف مناسبات، إحنا بنعمل تحف فنية'),
+      moSub: L('From a completely blank luxury canvas to a fully customized botanical wonderland or a sleek contemporary gala.', 'من مساحة فاضية فاخرة لعالم من الورد والنباتات متصمم مخصوص ليك، أو حفلة عصرية أنيقة.'),
+      moDayWhen: L('#katbktab', '#katbktab'), moDayTitle: L('Katb Ketab', 'كتب الكتاب'),
+      moDaySub: L('White arches, red velvet and roses on the open lawn, set up the way you picture it.', 'أقواس بيضا وقطيفة حمرا وورد في الجنينة المفتوحة، متجهزة زي ما انت متخيل.'),
+      moEveWhen: L('#LuxuryWeddingsCairo', '#LuxuryWeddingsCairo'), moEveTitle: L('Weddings & engagement parties', 'أفراح وخطوبات'),
+      moEveSub: L('The Zaffa, the Kosha and the first dance under the lights, with cold sparks and a dance floor that carries your names.', 'الزفة والكوشة وأول رقصة تحت الأنوار، بالشرارات الباردة وأرضية رقص عليها أساميكم.'),
+      altDay: L('White arches with red velvet drapes on the lawn at golden hour', 'أقواس بيضا بستاير قطيفة حمرا في الجنينة وقت الغروب'),
+      altEve: L('A couple’s first dance between cold-spark fountains', 'أول رقصة للعروسين وسط الشرارات الباردة'),
+      incTitle: L('Tailored white-glove service', 'خدمة متفصلة على مقاسك'),
+      // venue
+      spTitle: L('Our open-air venue', 'مكاننا المفتوح'), spSub: L('Complete privacy and an ambiance that cannot be replicated, by day and by night.', 'خصوصية كاملة وجو مالوش زي، بالنهار وبالليل.'),
+      toggleAria: L('Show the venue by day or by night', 'شوف المكان بالنهار أو بالليل'), dayShort: L('Day', 'نهار'), nightShort: L('Night', 'ليل'),
+      alt0d: L('Aisle of white arches with red velvet drapes on the lawn by day', 'ممر أقواس بيضا بستاير قطيفة حمرا في الجنينة بالنهار'),
+      alt0n: L('The arch aisle lit at night under palm trees', 'ممر الأقواس منور بالليل تحت النخل'),
+      alt1d: L('Round tables with red roses on the main lawn at sunset', 'ترابيزات بورد أحمر في الجنينة الرئيسية وقت الغروب'),
+      alt1n: L('The arched stage lit in amber above a monogrammed dance floor', 'المسرح بالأقواس منور وتحته أرضية رقص بالحروف'),
+      spCta: L('Visit the garden', 'تعالى شوف المكان'),
+      // packages (business model from the brief; prices are placeholders for the venue to set)
+      pkTitle: L('Fully customizable setups', 'تجهيزات قابلة للتخصيص بالكامل'),
+      pkSub: L('All-inclusive, priced per guest, with a minimum guest count per package.', 'الباقات شاملة كل حاجة، بسعر للفرد، وكل باقة ليها حد أدنى للمعازيم.'),
+      egp: L('EGP', 'ج.م'), perGuest: L('per guest', 'للفرد'), about: L('About', 'حوالي'),
+      pkNote: L('Example prices for the day picked below. Thursday and Friday cost about 18% more. Your final quote comes from the venue.', 'أسعار مثال لليوم اللي هتختاره تحت. الخميس والجمعة أغلى حوالي ١٨٪. السعر النهائي من المكان.'),
+      simTitle: L('Work out your budget', 'احسب ميزانيتك'), simSub: L('Change the numbers and send the result to us on WhatsApp.', 'غيّر الأرقام وابعتلنا النتيجة على الواتساب.'),
+      simGuests: L('Guests', 'عدد المعازيم'), simDay: L('Day', 'اليوم'), simOcc: L('Occasion', 'المناسبة'),
+      occKetab: L('Katb Ketab', 'كتب كتاب'), occRec: L('Wedding', 'فرح'), occBoth: L('Both', 'الاتنين'),
+      dayPeak: L('Thursday or Friday', 'خميس أو جمعة'), dayMid: L('Sunday to Wednesday', 'من الحد للأربع'),
+      simTier: L('Package', 'الباقة'), simAdds: L('Extras', 'إضافات'),
+      add1: L('Zaffa and cold sparks', 'زفة وشرارات باردة'), add2: L('Live carving station', 'محطة تقطيع لايف'), add3: L('Extra villa day', 'يوم زيادة في الفيلا'),
+      rcTotal: L('Estimated total', 'الإجمالي التقريبي'), guestsWord: L('guests', 'معزوم'),
+      rcKetab: L('Katb Ketab setup', 'تجهيز كتب الكتاب'), rcPeak: L('Thursday or Friday rate', 'سعر الخميس أو الجمعة'), rcIncl: L('included', 'محسوب'),
+      rcMin: '', rcOver: L('For more than 600 guests, message us and we will plan the layout with you.', 'لو أكتر من ٦٠٠ معزوم، كلمنا ونرتب المكان معاك.'),
+      rcVat: L('Before 14% VAT and service.', 'من غير ضريبة القيمة المضافة ١٤٪ والخدمة.'),
+      rcWa: L('Send this estimate on WhatsApp', 'ابعت التقدير ده على الواتساب'),
+      // catering
+      caTitle: L('Open buffet and live cooking', 'بوفيه مفتوح وطبخ لايف'), caSub: L('Pick how your guests eat. We serve it hot until the last guest.', 'اختار طريقة الأكل، واحنا نقدمه سخن لحد آخر ضيف.'),
+      caCta: L('Book a menu tasting', 'احجز جلسة تذوق'), altFood: L('Red roses on a velvet-draped arch', 'ورد أحمر على قوس بستارة قطيفة'),
+      m0: L('Open buffet', 'بوفيه مفتوح'), m1: L('Live stations', 'محطات لايف'), m2: L('Desserts', 'الحلو'),
+      taSub: L('Tell us which menu and a rough date. We confirm the time on WhatsApp.', 'قولنا المنيو وتاريخ تقريبي، ونأكد الميعاد على الواتساب.'),
+      taMenu: L('Menu', 'المنيو'), taBtn: L('Book the tasting', 'احجز التذوق'), taDone: L('Tasting booked', 'تم حجز التذوق'),
+      formErr: L('Add your name and phone number to continue.', 'اكتب اسمك ورقم موبايلك عشان نكمل.'),
+      // decor (their highlight is called Decor)
+      weTitle: L('Decor', 'الديكور'), weFilter: L('Filter photos', 'فلتر الصور'),
+      weNote: L('More setups on Instagram:', 'تجهيزات أكتر على إنستجرام:'),
+      // location
+      toTitle: L('Come see the garden', 'تعالى شوف الجنينة'),
+      toSub: L('Visit in person, or ask for a video call if you are abroad.', 'زورنا بنفسك، أو اطلب مكالمة فيديو لو برة مصر.'),
+      addr: L('Youssef El Sebai, New Cairo, in front of El Rehab City Gate 20', 'يوسف السباعي، القاهرة الجديدة، قدام بوابة ٢٠ الرحاب'),
+      catalog: L('Our WhatsApp catalog', 'كتالوج الواتساب بتاعنا'),
+      toKind: L('Visit type', 'نوع الزيارة'), toIn: L('Visit in person', 'زيارة'), toVid: L('Video call', 'مكالمة فيديو'),
+      toDate: L('Preferred date', 'التاريخ'), toTime: L('Time', 'الساعة'), toName: L('Your name', 'الاسم'), toPhone: L('Phone or WhatsApp', 'الموبايل أو الواتساب'),
+      toBtn: L('Book the visit', 'احجز الزيارة'), toDone: L('Visit booked', 'تم حجز الزيارة'),
+      toWa: L('Confirm on WhatsApp', 'أكد على الواتساب'), toAgain: L('Book another visit', 'احجز زيارة تانية'),
+      footTag: L('Luxury Outdoor Weddings & Events. Fully customizable setups, designed to match your vision.', 'أفراح ومناسبات خارجية فاخرة. تجهيزات قابلة للتخصيص بالكامل، مصممة على ذوقك.'),
+      waHead: L('The Garden Venue', 'ذا جاردن ڤينيو'), close: L('Close', 'قفل'),
+      waPre: L('This message goes with your choices:', 'الرسالة دي هتتبعت باختياراتك:'), waSend: L('Open WhatsApp', 'افتح الواتساب')
     };
 
     // ---------- dates ----------
@@ -1052,13 +1029,13 @@ class Component extends DCLogic {
     const rate = (b) => (peak ? Math.round((b * 1.18) / 50) * 50 : b);
     const td = tierDefs[s.tier];
     const billed = Math.max(s.guests, td.min);
-    t.rcMin = L('Billed at the ' + td.min + '-guest minimum guarantee for ' + td.name + '.', 'محسوبة على الحد الأدنى المضمون للباقة ال' + td.name + ': ' + fmt(td.min) + ' مدعو.');
+    t.rcMin = L('Charged for the ' + td.name + ' minimum of ' + td.min + ' guests.', 'محسوبة على الحد الأدنى لباقة ' + td.name + ': ' + fmt(td.min) + ' معزوم.');
     // occasion: Katb Ketab only is a lighter daytime setup; "both" adds the ceremony setup to the reception
     const occ = s.occ, KETAB_ADD = 650;
     const unit = occ === 'ketab' ? Math.round((rate(td.base) * 0.55) / 50) * 50 : rate(td.base);
     const base = billed * unit;
     const ketabTotal = occ === 'both' ? billed * KETAB_ADD : 0;
-    const occName = { ketab: t.occKetab, rec: t.occRec, both: L('Katb Ketab + Reception', 'كتب كتاب + فرح') }[occ];
+    const occName = { ketab: t.occKetab, rec: t.occRec, both: L('Katb Ketab and wedding', 'كتب كتاب وفرح') }[occ];
     const carvingTotal = s.carving ? billed * 170 : 0;
     const total = base + ketabTotal + carvingTotal + (s.zaffa ? 45000 : 0) + (s.villa ? 35000 : 0);
     this._total = total;
@@ -1067,8 +1044,8 @@ class Component extends DCLogic {
     // ---------- whatsapp ----------
     const dateTxt = s.date ? fmtDate(s.date) : L('flexible', 'مرن');
     const msg = ar
-      ? 'مرحبًا فريق ذا جاردن، أود الاستفسار عن فرح.\nالتاريخ: ' + dateTxt + '\nعدد المدعوين: ' + fmt(s.guests) + '\nالمناسبة: ' + occName + '\nالباقة: ' + td.name + ' (' + dayName(s.day) + ')\nالتقدير: ' + fmt(total) + ' ج.م'
-      : 'Hello The Garden Venue team, I would like to ask about a wedding.\nDate: ' + dateTxt + '\nGuests: ' + s.guests + '\nOccasion: ' + occName + '\nPackage: ' + td.name + ' (' + dayName(s.day) + ')\nEstimate: EGP ' + fmt(total);
+      ? 'أهلًا ذا جاردن، عايز أسأل عن فرح.\nالتاريخ: ' + dateTxt + '\nعدد المدعوين: ' + fmt(s.guests) + '\nالمناسبة: ' + occName + '\nالباقة: ' + td.name + ' (' + dayName(s.day) + ')\nالتقدير: ' + fmt(total) + ' ج.م'
+      : 'Hi The Garden Venue, I would like to ask about a wedding.\nDate: ' + dateTxt + '\nGuests: ' + s.guests + '\nOccasion: ' + occName + '\nPackage: ' + td.name + ' (' + dayName(s.day) + ')\nEstimate: EGP ' + fmt(total);
     const waUrl = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg);
 
     // ---------- availability ----------
@@ -1076,40 +1053,37 @@ class Component extends DCLogic {
     if (s.avail) {
       hasAvail = true;
       const k = s.avail;
-      availTitle = { open: L('This date looks open', 'التاريخ متاح'), limited: L('Few slots left. We suggest holding it.', 'متبقي عدد قليل. ننصح بالحجز المبدئي.'), booked: L('That date is already taken', 'هذا التاريخ محجوز'), past: L('Pick a future date', 'اختارا تاريخًا قادمًا'), none: L('Choose a date first', 'اختارا التاريخ أولًا') }[k];
-      availColor = { open: '#7fcf9a', limited: '#e9c46a', booked: '#e76f51', past: '#e76f51', none: '#e9c46a' }[k];
+      availTitle = { open: L('This date looks open', 'التاريخ ده شكله فاضي'), limited: L('Only a few slots left on this date', 'فاضل أماكن قليلة في اليوم ده'), booked: L('This date is booked', 'التاريخ ده محجوز'), past: L('Pick a date from today on', 'اختار تاريخ من النهارده ورايح'), none: L('Pick a date first', 'اختار التاريخ الأول') }[k];
+      availColor = { open: '#2f8a52', limited: '#E8A33D', booked: '#9B1C24', past: '#9B1C24', none: '#E8A33D' }[k];
       if ((k === 'booked' || k === 'limited') && s.date) { const n = this.nextOpen(s.date); if (n) { hasNext = true; nextDate = fmtDate(n); } }
     }
 
     // ---------- spaces ----------
     const spaces = [
-      { name: L('The Arch Aisle', 'ممر الأقواس'),
+      { name: L('The arch aisle', 'ممر الأقواس'),
         day: L('A walk of white arches draped in velvet, lined with roses and framed by palm trees. The setting for Katb Ketab and sunset portraits.', 'ممر من الأقواس البيضاء بستائر قطيفة وورد على الجانبين وسط النخيل. المكان المثالي لكتب الكتاب وصور الغروب.'),
         night: L('After dark the arches glow amber and become the Zaffa route, walking the couple straight to the stage.', 'بعد المغرب الأقواس بتنور بلون كهرماني وبتبقى طريق الزفة لحد المسرح.'),
-        cd: 300, cn: 350, area: 1800,
-        amen: [am('flower', L('Floral arch and aisle', 'قوس زهور وممر')), am('tree', L('Natural shade and mature trees', 'ظل طبيعي وأشجار معمّرة')), am('sun', L('Sunset photo corridors', 'ممرات تصوير وقت الغروب')), am('car', L('Valet parking and guest welcome', 'فاليه باركينج واستقبال الضيوف'))] },
-      { name: L('The Main Lawn & Stage', 'الحديقة الرئيسية والمسرح'),
+        amen: [am('flower', L('Floral arch and aisle', 'قوس زهور وممر')), am('tree', L('Palm trees and open lawn', 'نخل وجنينة مفتوحة')), am('sun', L('Sunset photos', 'صور الغروب')), am('car', L('Valet parking and guest welcome', 'فاليه باركينج واستقبال الضيوف'))] },
+      { name: L('The lawn and stage', 'الجنينة والمسرح'),
         day: L('Round tables under the palms with the stage at the head of the lawn. Golden-hour light for the family gathering before the night begins.', 'ترابيزات دائرية تحت النخيل والمسرح في صدر الحديقة. ضوء الساعة الذهبية لتجمع العيلة قبل بداية السهرة.'),
         night: L('The arched Kosha stage lit in amber, a dance floor printed with your monogram, and full sound and lighting for the reception.', 'مسرح الكوشة بالأقواس مضاء بالكهرماني، وأرضية رقص مطبوع عليها حروفكم، وصوت وإضاءة كاملين للفرح.'),
-        cd: 250, cn: 450, area: 1100,
-        amen: [am('sparkles', L('Kosha stage and decor', 'منصة الكوشة والديكور')), am('music', L('Concert-grade sound and lighting', 'صوت وإضاءة بمستوى الحفلات')), am('utensils', L('Open buffet and live stations', 'بوفيه مفتوح ومحطات حية')), am('zap', L('Full power backup', 'مولد كهرباء احتياطي كامل'))] },
-      { name: L('The Bridal Villa', 'فيلا العروس'),
+        amen: [am('sparkles', L('Kosha stage and decor', 'الكوشة والديكور')), am('music', L('Sound and lighting', 'صوت وإضاءة')), am('utensils', L('Open buffet and live stations', 'بوفيه مفتوح ومحطات حية')), am('zap', L('Full power backup', 'مولد كهرباء احتياطي كامل'))] },
+      { name: L('Bridal villa', 'فيلا العروسة'),
         day: L('The bridal retreat. Hair, makeup, the dress and a quiet morning with family before the day begins.', 'ملاذ العروس. الشعر والمكياج والفستان وصباح هادئ مع العائلة قبل بداية اليوم.'),
         night: L('After the reception the villa becomes a lounge for the closest circle, with soft music while the night continues.', 'بعد الحفل تصبح الفيلا صالة هادئة للمقربين بموسيقى خافتة بينما تستمر الليلة.'),
-        cd: 40, cn: 60, area: 600,
         amen: [am('bed', L('Bridal suite and dressing room', 'جناح العروس وغرفة الملابس')), am('sparkles', L('Makeup and prep rooms', 'غرف المكياج والتحضير')), am('home', L('Private entrance for the bridal party', 'مدخل خاص لفريق العروس')), am('users', L('Day-use lounge for family', 'صالة للعائلة طوال اليوم'))] }
     ];
     const sp = spaces[s.space];
     const night = s.night;
-    const curSpace = { name: sp.name, desc: night ? sp.night : sp.day, cap: fmt(night ? sp.cn : sp.cd), area: fmt(sp.area) + ' ' + L('m²', 'م²'), amen: sp.amen };
+    const curSpace = { name: sp.name, desc: night ? sp.night : sp.day, amen: sp.amen };
     const spaceTabs = spaces.map((x, i) => ({ name: x.name, cls: on(s.space === i), sel: String(s.space === i), pick: set({ space: i }) }));
 
     // ---------- tiers ----------
     const tierCards = tierDefs.map((x, i) => ({
-      name: x.name, price: fmt(rate(x.base)), features: x.f, best: i === 1, min: L('Min. ' + x.min + ' guests', 'حد أدنى ' + fmt(x.min) + ' مدعو'),
-      cls: (s.tier === i ? 'on ' : '') + (i === 2 ? 'dkt' : ''),
-      btn: i === 2 ? 'btn-g' : (s.tier === i ? 'btn-d' : 'btn-o'),
-      btnLabel: s.tier === i ? L('Selected', 'تم الاختيار') : L('Select', 'اختيار'),
+      name: x.name, price: fmt(rate(x.base)), features: x.f, min: L('Minimum ' + x.min + ' guests', 'أقل عدد ' + fmt(x.min) + ' معزوم'),
+      cls: s.tier === i ? 'on' : '', p: String(s.tier === i),
+      btn: s.tier === i ? 'btn-v' : 'btn-line',
+      btnLabel: s.tier === i ? L('Selected', 'مختارة') : L('Choose ' + x.name, 'اختار ' + x.name),
       pick: set({ tier: i })
     }));
     const tierBtns = tierDefs.map((x, i) => ({ name: x.name, cls: on(s.tier === i), p: String(s.tier === i), pick: set({ tier: i }) }));
@@ -1122,8 +1096,8 @@ class Component extends DCLogic {
 
     const occKeys = ['ketab', 'rec', 'both'];
     const occBtns = occKeys.map((k) => ({ name: { ketab: t.occKetab, rec: t.occRec, both: t.occBoth }[k], cls: on(occ === k), p: String(occ === k), pick: set({ occ: k }) }));
-    const dayTags = [L('Ma’zoun table & arch', 'ترابيزة المأذون والقوس'), L('Family lounge seating', 'جلسات العيلة'), L('Welcome drinks & petit fours', 'مشروبات ترحيب وبيتي فور'), L('Sunset photo session', 'جلسة تصوير الغروب')];
-    const eveTags = [L('Zaffa entrance', 'دخول الزفة'), L('Kosha stage', 'الكوشة'), L('Open buffet & live stations', 'بوفيه مفتوح ومحطات حية'), L('Evening lighting & DJ', 'إضاءة السهرة ودي جي')];
+    const dayList = L('Ma’zoun table, family seating, arches and sunset photos.', 'ترابيزة المأذون، قعدة العيلة، الأقواس، وصور الغروب.');
+    const eveList = L('Zaffa, Kosha, open buffet and live stations, lights and DJ.', 'زفة، كوشة، بوفيه مفتوح ومحطات لايف، إضاءة ودي جي.');
     const incItems = [
       { d: ICON.sparkles, name: L('Kosha & decor', 'الكوشة والديكور'), desc: L('Custom bridal stage and styling to your theme', 'كوشة وتنسيق على حسب الثيم بتاعكم') },
       { d: ICON.utensils, name: L('Open buffet & live cooking', 'بوفيه مفتوح وطبخ حي'), desc: L('Egyptian classics plus chef-run stations', 'أكلات مصرية أصيلة ومحطات بشيفات') },
@@ -1146,36 +1120,31 @@ class Component extends DCLogic {
     ];
     const cm = menus[s.menu];
     const curMenu = { desc: cm.desc, items: cm.items.map((x, i) => ({ n: '0' + (i + 1), t: x })) };
-    const menuTabs = menus.map((x, i) => ({ name: x.name, cls: s.menu === i ? 'on' : '', sel: String(s.menu === i), style: s.menu === i ? 'color:#1C1917' : '', pick: set({ menu: i }) }));
+    const menuTabs = menus.map((x, i) => ({ name: x.name, cls: s.menu === i ? 'on' : '', sel: String(s.menu === i), pick: set({ menu: i }) }));
 
     // ---------- lookbook ----------
     const allTiles = [
-      { cap: L('Velvet arches at golden hour', 'أقواس القطيفة في الساعة الذهبية'), k: 'ketab', tag: L('Katb Ketab', 'كتب الكتاب'), img: 'images/ig/DegY4opG2nA.jpg', pos: '50% 60%', bg: '#6b7048', c: 'span 5', r: 'span 3' },
-      { cap: L('First dance in cold sparks', 'أول رقصة وسط الشرارات الباردة'), k: 'zaffa', tag: L('Zaffa', 'الزفة'), img: 'images/ig/DegX71uGwtq.jpg', pos: '50% 40%', bg: '#171c3d', c: 'span 4', r: 'span 2' },
-      { cap: L('Red roses and velvet', 'ورد أحمر وقطيفة'), k: 'details', tag: L('Details', 'التفاصيل'), img: 'images/ig/DegZJdWG7vH.jpg', pos: '50% 45%', bg: '#7e2a20', c: 'span 3', r: 'span 2' },
-      { cap: L('The aisle by day', 'الممر نهارًا'), k: 'ketab', tag: L('Katb Ketab', 'كتب الكتاب'), img: 'images/ig/DegYOETm8iv.jpg', pos: '50% 60%', bg: '#4f5a38', c: 'span 4', r: 'span 2' },
-      { cap: L('Your monogram on the dance floor', 'حروفكم على أرضية الرقص'), k: 'zaffa', tag: L('Zaffa', 'الزفة'), img: 'images/ig/DegZFLQGzw1.jpg', pos: '50% 50%', bg: '#1C1917', c: 'span 3', r: 'span 2' },
-      { cap: L('Blossom columns lit at night', 'أعمدة ورد مضاءة ليلًا'), k: 'details', tag: L('Details', 'التفاصيل'), img: 'images/ig/DegY_YlG7Ay.jpg', pos: '50% 45%', bg: '#7e6226', c: 'span 5', r: 'span 1' }
+      { cap: L('Velvet arches at golden hour', 'أقواس القطيفة وقت الغروب'), k: 'ketab', img: 'images/ig/DegY4opG2nA.jpg', pos: '50% 60%' },
+      { cap: L('First dance in cold sparks', 'أول رقصة وسط الشرارات'), k: 'zaffa', img: 'images/ig/DegX71uGwtq.jpg', pos: '50% 40%' },
+      { cap: L('Your names on the dance floor', 'أساميكم على أرضية الرقص'), k: 'zaffa', img: 'images/ig/DegZFLQGzw1.jpg', pos: '50% 50%' },
+      { cap: L('The aisle by day', 'الممر بالنهار'), k: 'ketab', img: 'images/ig/DegYOETm8iv.jpg', pos: '50% 60%' },
+      { cap: L('Blossom columns at night', 'أعمدة الورد بالليل'), k: 'details', img: 'images/ig/DegY_YlG7Ay.jpg', pos: '50% 45%' },
+      { cap: L('The aisle at night', 'الممر بالليل'), k: 'details', img: 'images/ig/DegYjkKG2ao.jpg', pos: '50% 55%' }
     ];
-    const tiles = allTiles.filter((x) => s.filter === 'all' || x.k === s.filter).map((x) => ({ cap: x.cap, tag: x.tag, bg: x.bg, img: x.img, pos: x.pos, col: s.filter === 'all' ? x.c : 'span 4', row: s.filter === 'all' ? x.r : 'span 2' }));
-    const filters = [['all', L('All', 'الكل')], ['ketab', L('Katb Ketab', 'كتب الكتاب')], ['zaffa', L('Zaffa', 'الزفة')], ['details', L('Details', 'التفاصيل')]].map((f) => ({ name: f[1], cls: on(s.filter === f[0]), p: String(s.filter === f[0]), pick: set({ filter: f[0] }) }));
-    const quotes = [
-      { text: L('We did not think about anything the whole week. The team ran the day like it was theirs.', 'لم نفكر في أي شيء طوال الأسبوع. الفريق أدار اليوم وكأنه فرحهم.'), who: L('Sara & Omar', 'سارة وعمر'), role: L('Couple · sample quote', 'العروسان · رأي تجريبي') },
-      { text: L('My guests are still talking about the food. Everything arrived hot and on time.', 'ضيوفي ما زالوا يتحدثون عن الأكل. كل شيء وصل ساخنًا وفي موعده.'), who: L('Mr. Hesham', 'الأستاذ هشام'), role: L('Father of the bride · sample quote', 'والد العروس · رأي تجريبي') },
-      { text: L('Katb Ketab at sunset, then the Zaffa under the lights. Our photos look unreal.', 'كتب الكتاب وقت الغروب ثم الزفة تحت الأضواء. صورنا تبدو خيالية.'), who: L('Dina & Karim', 'دينا وكريم'), role: L('Couple · sample quote', 'العروسان · رأي تجريبي') }
-    ];
+    const tiles = allTiles.filter((x) => s.filter === 'all' || x.k === s.filter).map((x) => ({ cap: x.cap, img: x.img, pos: x.pos }));
+    const filters = [['all', L('All', 'الكل')], ['ketab', L('Katb Ketab', 'كتب كتاب')], ['zaffa', L('Weddings', 'أفراح')], ['details', L('Details', 'تفاصيل')]].map((f) => ({ name: f[1], cls: on(s.filter === f[0]), p: String(s.filter === f[0]), pick: set({ filter: f[0] }) }));
 
     // ---------- tour ----------
     const slotTimes = ['11:00', '13:00', '16:00', '18:00'];
     const slots = slotTimes.map((x, i) => ({ t: x, cls: on(s.tourSlot === i), p: String(s.tourSlot === i), pick: set({ tourSlot: i }) }));
     const tourTypeTxt = s.tourType === 'in' ? t.toIn : t.toVid;
-    const tourSummary = tourTypeTxt + ' · ' + (s.tourDate ? fmtDate(s.tourDate) : L('date to be agreed', 'التاريخ يُحدد لاحقًا')) + ' · ' + slotTimes[s.tourSlot];
+    const tourSummary = tourTypeTxt + ', ' + (s.tourDate ? fmtDate(s.tourDate) : L('date to be agreed', 'التاريخ هيتحدد')) + ', ' + slotTimes[s.tourSlot];
     const tourMsg = ar
-      ? 'مرحبًا The Garden، أود حجز ' + tourTypeTxt + '.\nالتاريخ: ' + (s.tourDate ? fmtDate(s.tourDate) : 'مرن') + ' الساعة ' + slotTimes[s.tourSlot] + '\nالاسم: ' + s.tourName + '\nالمدعوين: ' + fmt(s.guests) + '\nالتقدير: ' + fmt(total) + ' ج.م'
+      ? 'أهلًا ذا جاردن، عايز أحجز ' + tourTypeTxt + '.\nالتاريخ: ' + (s.tourDate ? fmtDate(s.tourDate) : 'مرن') + ' الساعة ' + slotTimes[s.tourSlot] + '\nالاسم: ' + s.tourName + '\nالمدعوين: ' + fmt(s.guests) + '\nالتقدير: ' + fmt(total) + ' ج.م'
       : 'Hello The Garden, I would like to book: ' + tourTypeTxt + '.\nDate: ' + (s.tourDate ? fmtDate(s.tourDate) : 'flexible') + ' at ' + slotTimes[s.tourSlot] + '\nName: ' + s.tourName + '\nGuests: ' + s.guests + '\nEstimate: EGP ' + fmt(total);
     const tasteTxt = menus[Number(s.tasteMenu)].name;
     const tasteMsg = ar
-      ? 'مرحبًا The Garden، أود حجز جلسة تذوق: ' + tasteTxt + '.\nالتاريخ: ' + (s.tasteDate ? fmtDate(s.tasteDate) : 'مرن') + '\nالاسم: ' + s.tasteName
+      ? 'أهلًا ذا جاردن، عايز أحجز جلسة تذوق: ' + tasteTxt + '.\nالتاريخ: ' + (s.tasteDate ? fmtDate(s.tasteDate) : 'مرن') + '\nالاسم: ' + s.tasteName
       : 'Hello The Garden, I would like a menu tasting: ' + tasteTxt + '.\nDate: ' + (s.tasteDate ? fmtDate(s.tasteDate) : 'flexible') + '\nName: ' + s.tasteName;
 
     const modeShort = night ? L('Midnight Gala', 'سهرة منتصف الليل') : L('Golden Hour', 'الساعة الذهبية');
@@ -1195,7 +1164,7 @@ class Component extends DCLogic {
       // spaces
       nightCls: night ? 'night' : '', nightStr: String(night), flipNight: () => this.setState({ night: !s.night }),
       sunOp: night ? '0' : '.9', moonOp: night ? '.9' : '0', modeIcon: night ? ICON.moon : ICON.sun,
-      spaceTabs, spTabW: 'calc(33.333% - 8px)', spTabX: (s.space * 33.333) + '%',
+      spaceTabs, spTabW: '33.333%', spTabX: (s.space * 33.333) + '%',
       p0d: s.space === 0 && !night ? 1 : 0, p0n: s.space === 0 && night ? 1 : 0,
       p1d: s.space === 1 && !night ? 1 : 0, p1n: s.space === 1 && night ? 1 : 0,
       sc2: s.space === 2 ? 1 : 0, lt2: night && s.space === 2 ? 1 : 0,
@@ -1208,28 +1177,28 @@ class Component extends DCLogic {
       onGuests: (e) => this.setState({ guests: Number(e.target.value) }),
       dayX: peak ? '0%' : '50%', peakOn: on(peak), midOn: on(!peak), peakP: String(peak), midP: String(!peak),
       setPeak: set({ day: 'peak' }), setMid: set({ day: 'mid' }),
-      tierX: (s.tier * 33.333) + '%', occX: (occKeys.indexOf(occ) * 33.333) + '%', occBtns, occName, both: occ === 'both', ketabFmt: fmt(ketabTotal), dayTags, eveTags, incItems,
+      tierX: (s.tier * 33.333) + '%', occX: (occKeys.indexOf(occ) * 33.333) + '%', occBtns, occName, both: occ === 'both', ketabFmt: fmt(ketabTotal), dayList, eveList, incItems,
       display: fmt(display), perHeadFmt: fmt(total / billed), tierName: td.name, billedFmt: fmt(billed), baseFmt: fmt(base),
       peakSel: peak, zaffa: s.zaffa, carving: s.carving, villa: s.villa,
       zaffaFmt: fmt(45000), carvingFmt: fmt(carvingTotal), villaFmt: fmt(35000),
       underMin: s.guests < td.min, overCap: s.guests > 600,
       // catering
-      menuTabs, menuTabW: 'calc(33.333% - 8px)', menuTabX: (s.menu * 33.333) + '%', curMenu,
+      menuTabs, menuTabW: '33.333%', menuTabX: (s.menu * 33.333) + '%', curMenu,
       openTaste: set({ tasteOpen: true, tasteSent: false, tasteErr: false }), closeTaste: set({ tasteOpen: false }), stop: (e) => e.stopPropagation(),
       tasteOpen: s.tasteOpen, tasteSent: s.tasteSent, tasteForm: !s.tasteSent, tasteErr: s.tasteErr,
       tasteName: s.tasteName, tastePhone: s.tastePhone, tasteMenu: s.tasteMenu, tasteDate: s.tasteDate,
       onTasteName: inp('tasteName'), onTastePhone: inp('tastePhone'), onTasteMenu: inp('tasteMenu'), onTasteDate: inp('tasteDate'),
       tasteSubmit: () => { if (!s.tasteName.trim() || !s.tastePhone.trim()) { this.setState({ tasteErr: true }); } else { this.setState({ tasteSent: true, tasteErr: false }); } },
-      tasteSummary: tasteTxt + ' · ' + (s.tasteDate ? fmtDate(s.tasteDate) : L('date to be agreed', 'التاريخ يُحدد لاحقًا')),
+      tasteSummary: tasteTxt + ', ' + (s.tasteDate ? fmtDate(s.tasteDate) : L('date to be agreed', 'التاريخ هيتحدد')),
       tasteWa: 'https://wa.me/' + WA + '?text=' + encodeURIComponent(tasteMsg),
       // weddings
-      filters, tiles, quotes,
+      filters, tiles,
       // tour
       tourOpen: !s.tourSent, tourSent: s.tourSent, tourErr: s.tourErr, slots,
       tourX: s.tourType === 'in' ? '0%' : '50%', tourInOn: on(s.tourType === 'in'), tourVidOn: on(s.tourType === 'vid'),
       tourInP: String(s.tourType === 'in'), tourVidP: String(s.tourType === 'vid'),
       setTourIn: set({ tourType: 'in' }), setTourVid: set({ tourType: 'vid' }),
-      tourDesc: s.tourType === 'in' ? L('Walk the garden with our planner. Best booked at the hour you plan to marry.', 'تجولا في الحديقة مع المنسق. الأفضل في الساعة التي تخططان للزواج فيها.') : L('A live video call from the venue for couples and families abroad.', 'مكالمة فيديو مباشرة من المكان للعرسان والعائلات في الخارج.'),
+      tourDesc: s.tourType === 'in' ? L('Come at the hour you plan to celebrate to see the light you will get.', 'تعالى في نفس ميعاد فرحك عشان تشوف الإضاءة هتبقى عاملة إزاي.') : L('A live video call from the garden, for couples and families abroad.', 'مكالمة فيديو لايف من الجنينة، للعرسان والعيلات اللي برة مصر.'),
       tourDate: s.tourDate, tourName: s.tourName, tourPhone: s.tourPhone,
       onTourDate: inp('tourDate'), onTourName: inp('tourName'), onTourPhone: inp('tourPhone'),
       tourSubmit: () => { if (!s.tourName.trim() || !s.tourPhone.trim()) { this.setState({ tourErr: true }); } else { this.setState({ tourSent: true, tourErr: false }); } },
